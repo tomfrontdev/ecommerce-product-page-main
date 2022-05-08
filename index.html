@@ -1,44 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/main.css" />
+		<link
+			rel="stylesheet"
+			media="(max-width: 375px)"
+			href="styles/mobile.css"
+		/>
+		<link rel="stylesheet" href="styles/desktop.css" />
+		<title>Frontend Mentor | E-commerce product page</title>
+	</head>
+	<body>
+		<nav class="nav_mobile">
+			<div class="nav_div icon">
+				<img src="images/icon-menu.svg" alt="menu" />
+			</div>
+			<div class="nav_div logo">
+				<img src="images/logo.svg" alt="Logo" />
+			</div>
+			<div class="nav_div cart">
+				<img src="images/icon-cart.svg" alt="Cart" />
+			</div>
+			<div class="nav_div avatar">
+				<img src="images/image-avatar.png" alt="Avatar" />
+			</div>
+		</nav>
+		<main class="slider_mobile">
+			<div class="slide">
+				<img src="images/image-product-1.jpg" alt="Product1" />
+			</div>
+			<div class="slide">
+				<img src="images/image-product-2.jpg" alt="Product2" />
+			</div>
+			<div class="slide">
+				<img src="images/image-product-3.jpg" alt="Product2" />
+			</div>
+			<div class="slide">
+				<img src="images/image-product-4.jpg" alt="Product2" />
+			</div>
+			<button class="slider_icon slider_icon--previous">
+				<img src="images/icon-previous.svg" />
+			</button>
+			<button class="slider_icon slider_icon--next">
+				<img src="images/icon-next.svg" />
+			</button>
+		</main>
+		<section class="description_mobile">
+			<h2>SNEAKER COMPANY</h2>
+			<h1>Fall Limited Edition Sneakers</h1>
+			<p>
+				These low-profile sneakers are your perfect casual wear
+				companion. Featuring a durable rubber outer sole, they'll
+				withstand everything the weather can offer.
+			</p>
+		</section>
+		<section class="pricing_mobile">
+			<div class="pricing_mobile--discountedprice">
+				<p>$125.00</p>
+			</div>
+			<div class="pricing_mobile--discount"><p>50%</p></div>
+			<div class="pricing_mobile--originalprice"><p>$250.00</p></div>
+		</section>
+		<section class="cart_mobile">
+			<div class="cart_quantity">
+				<button class="cart_quantity--minus">
+					<img src="images/icon-minus.svg" />
+				</button>
+				<p class="cart_quantity-amount">0</p>
+				<button class="cart_quantity--plus">
+					<img src="images/icon-plus.svg" />
+				</button>
+			</div>
+			<button class="cart_add">
+				<img src="images/icon-cart.svg" />
+				<p>Add to cart</p>
+			</button>
+		</section>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+		<script src="script.js"></script>
+	</body>
 </html>
