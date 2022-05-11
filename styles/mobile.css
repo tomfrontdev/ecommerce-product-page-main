@@ -33,6 +33,33 @@
 	padding-left: 15px;
 }
 
+.nav_div.cart {
+	position: relative;
+}
+
+.nav_div.cart--popup {
+	color: var(--white);
+	font-size: 0.75rem;
+	width: 15px;
+	height: 15px;
+	background-color: var(--orange);
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	border-radius: 100%;
+	right: -5px;
+	top: 10%;
+}
+
+.nav_div.cart--popup.hidden {
+	display: none;
+}
+
+.nav_div.cart--carticon {
+	background-color: inherit;
+	border: none;
+}
+
 .slider_mobile {
 	/* // WHY ??  */
 	position: relative;
@@ -43,6 +70,7 @@
 
 .slide {
 	position: absolute;
+	transition: 0.5s;
 }
 
 .slide > img {
@@ -105,7 +133,7 @@
 	font-weight: 700;
 	font-size: 1.5rem;
 	font-style: bold;
-	width: 120px;
+	width: 90px;
 }
 
 .pricing_mobile--discount {
@@ -175,4 +203,86 @@
 }
 .cart_add > * {
 	padding: 5px;
+}
+
+.slider_cart {
+	width: 330px;
+	height: 300px;
+	top: 10px;
+	left: 10px;
+	background-color: red;
+	background-color: var(--white);
+	border-radius: 10%;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+}
+
+.slider_cart.hidden {
+	display: none;
+}
+
+.slider_carttitle {
+	padding: 30px;
+	font-weight: 700;
+	border-bottom: 2px solid var(--lightgrayishblue);
+}
+
+.slider_cart--text {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--darkgrayishblue);
+}
+
+.slider_cart--text.hidden {
+	display: none;
+}
+
+.slider_cartorderimg > img {
+	height: 60px;
+	width: 60px;
+	border-radius: 10%;
+}
+
+.slider_cartorder {
+	/* padding: 0px; */
+	display: grid;
+	grid-template-columns: 50px 1fr 20px;
+	gap: 25px;
+	margin: auto;
+}
+
+.slider_cartorder.hidden {
+	display: none;
+}
+
+.slider_cartcheckout {
+	grid-column: 1 / -1;
+}
+.slider_cart--checkoutbutton {
+	width: 100%;
+	border: none;
+	background-color: var(--orange);
+	color: var(--white);
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.slider_cartorderdescription {
+	color: var(--darkgrayishblue);
+}
+.slider_cartorderdescription > p {
+	padding: 5px;
+}
+.slider_cartorderprice--bold {
+	font-weight: 700;
+	color: var(--blackwithopacity);
+}
+.slider_cartorderdelete {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

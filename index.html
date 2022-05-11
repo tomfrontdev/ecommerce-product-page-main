@@ -10,11 +10,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles/main.css" />
-		<link
-			rel="stylesheet"
-			media="(max-width: 375px)"
-			href="styles/mobile.css"
-		/>
+		<link rel="stylesheet" href="styles/mobile.css" />
 		<link rel="stylesheet" href="styles/desktop.css" />
 		<title>Frontend Mentor | E-commerce product page</title>
 	</head>
@@ -27,7 +23,12 @@
 				<img src="images/logo.svg" alt="Logo" />
 			</div>
 			<div class="nav_div cart">
-				<img src="images/icon-cart.svg" alt="Cart" />
+				<div class="nav_div cart--popup hidden">
+					<p class="nav_div cart--popupamount"></p>
+				</div>
+				<button class="nav_div cart--carticon">
+					<img src="images/icon-cart.svg" alt="Cart" />
+				</button>
 			</div>
 			<div class="nav_div avatar">
 				<img src="images/image-avatar.png" alt="Avatar" />
@@ -52,6 +53,38 @@
 			<button class="slider_icon slider_icon--next">
 				<img src="images/icon-next.svg" />
 			</button>
+			<div class="slider_cart hidden">
+				<div class="slider_carttitle">
+					<h3>Cart</h3>
+				</div>
+				<div class="slider_cart--text hidden">
+					<p>Your cart is empty.</p>
+				</div>
+				<div class="slider_cartorder hidden">
+					<div class="slider_cartorderimg">
+						<img src="images/image-product-1-thumbnail.jpg" />
+					</div>
+					<div class="slider_cartorderdescription">
+						<p class="slider_cartordertitle">
+							Autumn Limited Edition...
+						</p>
+						<p class="slider_cartorderprice">
+							<span class="slider_cartorderprice--bold"></span>
+						</p>
+					</div>
+					<div class="slider_cartorderdelete">
+						<img
+							class="slider_cartorderdelete--icon"
+							src="images/icon-delete.svg"
+						/>
+					</div>
+					<div class="slider_cartcheckout">
+						<button class="slider_cart--checkoutbutton">
+							Checkout
+						</button>
+					</div>
+				</div>
+			</div>
 		</main>
 		<section class="description_mobile">
 			<h2>SNEAKER COMPANY</h2>
@@ -74,7 +107,7 @@
 				<button class="cart_quantity--minus">
 					<img src="images/icon-minus.svg" />
 				</button>
-				<p class="cart_quantity-amount">0</p>
+				<p class="cart_quantity-amount">1</p>
 				<button class="cart_quantity--plus">
 					<img src="images/icon-plus.svg" />
 				</button>

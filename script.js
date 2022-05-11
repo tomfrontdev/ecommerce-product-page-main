@@ -8,45 +8,95 @@ const discountPrice = document.querySelector(
 );
 const originalPrice = document.querySelector(".pricing_mobile--originalprice");
 const amount = document.querySelector(".cart_quantity-amount");
+const addtoCart = document.querySelector(".cart_add");
+const navcartIcon = document.querySelector(".nav_div.cart--carticon");
+const cartPopup = document.querySelector(".nav_div.cart--popup");
+const cartPopupamount = document.querySelector(".nav_div.cart--popupamount");
+const sliderCart = document.querySelector(".slider_cart");
+const sliderCarttext = document.querySelector(".slider_cart--text");
+const sliderCartorder = document.querySelector(".slider_cartorder");
+const sliderCartorderprice = document.querySelector(".slider_cartorderprice");
+const sliderCartorderspan = document.querySelector(
+	".slider_cartorderprice--bold"
+);
+const cartOrderdelete = document.querySelector(".slider_cartorderdelete--icon");
+
+let currentSlide = 1;
+let priceIndex = 1;
 
 slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
 
-let currentSlide = 1;
-
-nextBtn.addEventListener("click", function (e) {
-	e.preventDefault();
+const moveSlider = () => {
 	slides.forEach(
 		(s, i) =>
 			(s.style.transform = `translateX(${(i - currentSlide) * 100}%)`)
 	);
+};
+
+const nextSlider = () => {
+	moveSlider();
 	currentSlide++;
 	if (currentSlide >= 4) currentSlide = 0;
-});
+};
 
-prevBtn.addEventListener("click", function (e) {
-	e.preventDefault();
-	slides.forEach(
-		(s, i) =>
-			(s.style.transform = `translateX(${(i - currentSlide) * 100}%)`)
-	);
+const prevSlider = () => {
+	moveSlider();
 	currentSlide--;
 	if (currentSlide == -1) currentSlide = 3;
+};
+
+const setPrices = () => {
+	discountPrice.textContent = `${125 * amount.textContent}.00$`;
+	originalPrice.textContent = `${250 * amount.textContent}.00$`;
+};
+
+const showEmptycart = () => {
+	sliderCarttext.classList.remove("hidden");
+	sliderCartorder.classList.add("hidden");
+};
+
+const showOrder = () => {
+	sliderCarttext.classList.add("hidden");
+	sliderCartorder.classList.remove("hidden");
+};
+
+addtoCart.addEventListener("click", () => {
+	cartPopupamount.textContent = +cartPopupamount.textContent + priceIndex;
+	cartPopup.classList.remove("hidden");
+	if (!sliderCart.classList.contains("hidden")) showOrder();
+	sliderCartorderprice.innerHTML = `$125.00 x ${
+		cartPopupamount.textContent
+	} <span class="slider_cartorderprice--bold">$${
+		125 * cartPopupamount.textContent
+	}</span>`;
 });
 
-let priceIndex = 1;
+navcartIcon.addEventListener("click", () => {
+	sliderCart.classList.toggle("hidden");
+	if (cartPopup.classList.contains("hidden")) showEmptycart();
+	if (!cartPopup.classList.contains("hidden")) showOrder();
+});
 
-plusBtn.addEventListener("click", function () {
-	amount.textContent++;
+cartOrderdelete.addEventListener("click", () => {
+	cartPopupamount.textContent = 0;
+	cartPopup.classList.add("hidden");
+	showEmptycart();
+});
+
+nextBtn.addEventListener("click", nextSlider);
+
+prevBtn.addEventListener("click", prevSlider);
+
+plusBtn.addEventListener("click", () => {
 	priceIndex++;
-	discountPrice.textContent = `${125 * priceIndex}.00$`;
-	originalPrice.textContent = `${250 * priceIndex}.00$`;
+	amount.textContent++;
+	setPrices();
 });
 
-minusBtn.addEventListener("click", function () {
-	if (priceIndex > 1) {
-		amount.textContent--;
+minusBtn.addEventListener("click", () => {
+	if (amount.textContent > 1) {
 		priceIndex--;
-		discountPrice.textContent = `${125 * priceIndex}.00$`;
-		originalPrice.textContent = `${250 * priceIndex}.00$`;
+		amount.textContent--;
+		setPrices();
 	}
 });
