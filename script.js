@@ -53,14 +53,37 @@ const setPrices = () => {
 	originalPrice.textContent = `${250 * amount.textContent}.00$`;
 };
 
-const showEmptycart = () => {
+const emptyCart = () => {
 	sliderCarttext.classList.remove("hidden");
 	sliderCartorder.classList.add("hidden");
 };
 
-const showOrder = () => {
+const filledCart = () => {
 	sliderCarttext.classList.add("hidden");
 	sliderCartorder.classList.remove("hidden");
+};
+
+const showAnimation = () => {
+	navMenuBar.classList.add("showanimation");
+	navMenuBar.classList.remove("hideanimation");
+};
+
+const hideAnimation = () => {
+	navMenuBar.classList.remove("showanimation");
+	navMenuBar.classList.add("hideanimation");
+};
+
+const showOrder = () => {
+	if (cartPopup.classList.contains("hidden")) emptyCart();
+	if (!cartPopup.classList.contains("hidden")) filledCart();
+};
+
+const hideCart = () => {
+	sliderCart.classList.add("hidden");
+};
+
+const toggleCart = () => {
+	sliderCart.classList.toggle("hidden");
 };
 
 addtoCart.addEventListener("click", () => {
@@ -75,17 +98,24 @@ addtoCart.addEventListener("click", () => {
 });
 
 navcartIcon.addEventListener("click", () => {
-	sliderCart.classList.toggle("hidden");
-	if (cartPopup.classList.contains("hidden")) showEmptycart();
-	if (!cartPopup.classList.contains("hidden")) showOrder();
-	navMenuBar.classList.remove("showanimation");
-	navMenuBar.classList.add("hideanimation");
+	if (!navMenuBar.classList.contains("showanimation")) {
+		toggleCart();
+		showOrder();
+	}
+	if (navMenuBar.classList.contains("showanimation")) {
+		hideAnimation();
+		if (sliderCart.classList.contains("hidden")) {
+			showOrder();
+			sliderCart.classList.remove("hidden");
+		}
+	}
 });
 
 cartOrderdelete.addEventListener("click", () => {
+	hideAnimation();
 	cartPopupamount.textContent = 0;
 	cartPopup.classList.add("hidden");
-	showEmptycart();
+	emptyCart();
 });
 
 nextBtn.addEventListener("click", nextSlider);
@@ -107,11 +137,10 @@ minusBtn.addEventListener("click", () => {
 });
 
 navMenu.addEventListener("click", function () {
-	navMenuBar.classList.remove("hideanimation");
-	navMenuBar.classList.add("showanimation");
+	hideCart();
+	showAnimation();
 });
 
 navmenuClose.addEventListener("click", function () {
-	navMenuBar.classList.remove("showanimation");
-	navMenuBar.classList.add("hideanimation");
+	hideAnimation();
 });
