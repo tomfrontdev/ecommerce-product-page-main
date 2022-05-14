@@ -9,6 +9,8 @@ const discountPrice = document.querySelector(
 const originalPrice = document.querySelector(".pricing_mobile--originalprice");
 const amount = document.querySelector(".cart_quantity-amount");
 const addtoCart = document.querySelector(".cart_add");
+const navMenu = document.querySelector(".nav_div.icon");
+const navMenuBar = document.querySelector(".nav_div.menu");
 const navcartIcon = document.querySelector(".nav_div.cart--carticon");
 const cartPopup = document.querySelector(".nav_div.cart--popup");
 const cartPopupamount = document.querySelector(".nav_div.cart--popupamount");
@@ -20,6 +22,7 @@ const sliderCartorderspan = document.querySelector(
 	".slider_cartorderprice--bold"
 );
 const cartOrderdelete = document.querySelector(".slider_cartorderdelete--icon");
+const navmenuClose = document.querySelector(".nav_div.menu-closeicon");
 
 let currentSlide = 1;
 let priceIndex = 1;
@@ -75,6 +78,8 @@ navcartIcon.addEventListener("click", () => {
 	sliderCart.classList.toggle("hidden");
 	if (cartPopup.classList.contains("hidden")) showEmptycart();
 	if (!cartPopup.classList.contains("hidden")) showOrder();
+	navMenuBar.classList.remove("showanimation");
+	navMenuBar.classList.add("hideanimation");
 });
 
 cartOrderdelete.addEventListener("click", () => {
@@ -99,4 +104,14 @@ minusBtn.addEventListener("click", () => {
 		amount.textContent--;
 		setPrices();
 	}
+});
+
+navMenu.addEventListener("click", function () {
+	navMenuBar.classList.remove("hideanimation");
+	navMenuBar.classList.add("showanimation");
+});
+
+navmenuClose.addEventListener("click", function () {
+	navMenuBar.classList.remove("showanimation");
+	navMenuBar.classList.add("hideanimation");
 });

@@ -6,7 +6,6 @@
 
 .nav_mobile {
 	display: flex;
-	height: 70px;
 	padding: 15px;
 }
 
@@ -24,8 +23,76 @@
 	height: 20px;
 }
 
+.nav_div.menu {
+	height: 100vh;
+	width: 40%;
+	background-color: var(--white);
+	animation-duration: 0.5s;
+	z-index: 1;
+	display: block;
+	position: absolute;
+	left: -200px;
+	top: 0;
+	flex-direction: column;
+	font-weight: 700;
+}
+
+.nav_div.menu > * {
+	cursor: pointer;
+}
+
+.showanimation {
+	animation-name: show;
+	animation-fill-mode: forwards;
+}
+
+.hideanimation {
+	animation-name: hide;
+}
+
+.nav_div.menulist {
+	list-style-type: none;
+	display: inline-block;
+	margin-right: auto;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.nav_div.menulist > li {
+	padding-bottom: 15px;
+}
+
+.nav_div.div-closeicon {
+	padding: 15px;
+}
+
+@keyframes show {
+	from {
+		left: -200px;
+	}
+
+	to {
+		left: 0px;
+	}
+}
+
+@keyframes hide {
+	from {
+		left: 0px;
+	}
+
+	to {
+		left: -200px;
+	}
+}
+
 .nav_div.icon > img {
 	height: 15px;
+}
+
+.nav_div.menu-closeicon {
+	margin-right: auto;
 }
 
 .nav_div.avatar,
@@ -58,6 +125,7 @@
 .nav_div.cart--carticon {
 	background-color: inherit;
 	border: none;
+	cursor: pointer;
 }
 
 .slider_mobile {
