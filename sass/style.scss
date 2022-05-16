@@ -4,6 +4,21 @@
 	box-sizing: border-box;
 }
 
+:root {
+	/* Primary Colors */
+	--orange: hsl(26, 100%, 55%);
+	--paleorange: hsl(25, 100%, 94%);
+
+	/* Neutral Colors */
+
+	--veryvarkblue: hsl(220, 13%, 13%);
+	--darkgrayishblue: hsl(219, 9%, 45%);
+	--grayishblue: hsl(220, 14%, 75%);
+	--lightgrayishblue: hsl(223, 64%, 98%);
+	--white: hsl(0, 0%, 100%);
+	--blackwithopacity: hsl(0, 0%, 0%);
+}
+
 .nav_mobile {
 	display: flex;
 	padding: 15px;
@@ -87,7 +102,7 @@
 	}
 }
 
-.nav_div.icon > img {
+.nav__hamburger > img {
 	height: 15px;
 }
 
@@ -133,7 +148,7 @@
 	position: relative;
 	overflow: hidden;
 	min-width: 320px;
-	min-height: 450px;
+	min-height: 320px;
 }
 
 .slide {
@@ -280,9 +295,8 @@
 	height: 90%;
 	top: 20px;
 	left: 20px;
-	background-color: red;
 	background-color: var(--white);
-	border-radius: 10%;
+	border-radius: 50px;
 	position: absolute;
 	display: flex;
 	flex-direction: column;

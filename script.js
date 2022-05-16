@@ -97,7 +97,7 @@ addtoCart.addEventListener("click", () => {
 	}</span>`;
 });
 
-navcartIcon.addEventListener("click", () => {
+navcartIcon.addEventListener("click", (e) => {
 	if (!navMenuBar.classList.contains("showanimation")) {
 		toggleCart();
 		showOrder();
@@ -136,11 +136,32 @@ minusBtn.addEventListener("click", () => {
 	}
 });
 
-navMenu.addEventListener("click", function () {
+navMenu.addEventListener("click", () => {
 	hideCart();
 	showAnimation();
 });
 
-navmenuClose.addEventListener("click", function () {
-	hideAnimation();
+navmenuClose.addEventListener("click", hideAnimation);
+
+document.body.addEventListener("click", (e) => {
+	if (!sliderCart.classList.contains("hidden")) {
+		if (
+			!e.target.closest(".slider_cart") &&
+			!e.target.closest(".nav_div.cart--carticon")
+		)
+			hideCart();
+	}
+	if (navMenuBar.classList.contains("showanimation")) {
+		if (
+			!e.target.closest(".nav_div.menu") &&
+			!e.target.closest(".nav_div.icon")
+		)
+			hideAnimation();
+	}
 });
+
+// sliderCart.addEventListener("click", (e) => {
+// 	if (!sliderCart.classList.contains("hidden"));
+// 	e.stopPropagation();
+// 	console.log(e.currentTarget);
+// });
