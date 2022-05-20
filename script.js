@@ -1,31 +1,37 @@
-const slides = document.querySelectorAll(".slide");
-const nextBtn = document.querySelector(".slider_icon--next");
-const prevBtn = document.querySelector(".slider_icon--previous");
-const plusBtn = document.querySelector(".cart_quantity--plus");
-const minusBtn = document.querySelector(".cart_quantity--minus");
-const discountPrice = document.querySelector(
-	".pricing_mobile--discountedprice"
-);
-const originalPrice = document.querySelector(".pricing_mobile--originalprice");
-const amount = document.querySelector(".cart_quantity-amount");
-const addtoCart = document.querySelector(".cart_add");
-const navMenu = document.querySelector(".nav_div.icon");
-const navMenuBar = document.querySelector(".nav_div.menu");
-const navcartIcon = document.querySelector(".nav_div.cart--carticon");
-const cartPopup = document.querySelector(".nav_div.cart--popup");
-const cartPopupamount = document.querySelector(".nav_div.cart--popupamount");
-const sliderCart = document.querySelector(".slider_cart");
-const sliderCarttext = document.querySelector(".slider_cart--text");
-const sliderCartorder = document.querySelector(".slider_cartorder");
-const sliderCartorderprice = document.querySelector(".slider_cartorderprice");
+const slides = document.querySelectorAll(".slider__img");
+const nextBtn = document.querySelector(".slider__icon--next");
+const prevBtn = document.querySelector(".slider__icon--previous");
+const plusBtn = document.querySelector(".amount__btn--plus");
+const minusBtn = document.querySelector(".amount__btn--minus");
+const discountPrice = document.querySelector(".price__amount--discountedprice");
+const originalPrice = document.querySelector(".price__amount--originalprice");
+const amount = document.querySelector(".amount__number");
+const addtoCart = document.querySelector(".quantity__div--addtoCart");
+const navMenu = document.querySelector(".navmobile__hamburger");
+const navMenuBar = document.querySelector(".navmobile__dropdownnav");
+const navcartIcon = document.querySelector(".navmobile__cart");
+const cartPopup = document.querySelector(".cart__popup--orange");
+const cartPopupamount = document.querySelector(".cart__popup--amount");
+const sliderCart = document.querySelector(".slider__cart");
+const sliderCarttext = document.querySelector(".cart__text");
+const sliderCartorder = document.querySelector(".cart__order");
+const sliderCartorderprice = document.querySelector(".cartproduct__orderprice");
 const sliderCartorderspan = document.querySelector(
-	".slider_cartorderprice--bold"
+	".cartproduct__orderprice--bold"
 );
-const cartOrderdelete = document.querySelector(".slider_cartorderdelete--icon");
-const navmenuClose = document.querySelector(".nav_div.menu-closeicon");
+const translucentBackground = document.querySelector(".navmobile__background");
+const cartOrderdelete = document.querySelector(".cartproduct__deleteicon");
+const navmenuClose = document.querySelector(".dropdownnav__closeicon");
 
 let currentSlide = 1;
 let priceIndex = 1;
+
+navMenu.addEventListener("click", () => {
+	console.log("hi");
+	hideCart();
+	showAnimation();
+	translucentBackground.classList.remove("hidden");
+});
 
 slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
 
@@ -92,7 +98,7 @@ addtoCart.addEventListener("click", () => {
 	if (!sliderCart.classList.contains("hidden")) showOrder();
 	sliderCartorderprice.innerHTML = `$125.00 x ${
 		cartPopupamount.textContent
-	} <span class="slider_cartorderprice--bold">$${
+	} <span class="cartproduct__orderprice--bold">$${
 		125 * cartPopupamount.textContent
 	}</span>`;
 });
@@ -136,32 +142,27 @@ minusBtn.addEventListener("click", () => {
 	}
 });
 
-navMenu.addEventListener("click", () => {
-	hideCart();
-	showAnimation();
+navmenuClose.addEventListener("click", () => {
+	hideAnimation();
+	translucentBackground.classList.add("hidden");
 });
-
-navmenuClose.addEventListener("click", hideAnimation);
 
 document.body.addEventListener("click", (e) => {
 	if (!sliderCart.classList.contains("hidden")) {
 		if (
-			!e.target.closest(".slider_cart") &&
-			!e.target.closest(".nav_div.cart--carticon")
+			!e.target.closest(".slider__cart") &&
+			!e.target.closest(".navmobile__cart") &&
+			!e.target.closest(".content__amountbtn")
 		)
 			hideCart();
 	}
 	if (navMenuBar.classList.contains("showanimation")) {
 		if (
-			!e.target.closest(".nav_div.menu") &&
-			!e.target.closest(".nav_div.icon")
-		)
+			!e.target.closest(".navmobile__dropdownnav") &&
+			!e.target.closest(".navmobile__hamburger")
+		) {
 			hideAnimation();
+			translucentBackground.classList.add("hidden");
+		}
 	}
 });
-
-// sliderCart.addEventListener("click", (e) => {
-// 	if (!sliderCart.classList.contains("hidden"));
-// 	e.stopPropagation();
-// 	console.log(e.currentTarget);
-// });

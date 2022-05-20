@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	border: none;
+	background-color: inherit;
+}
+
+:root {
+	/* Primary Colors */
+	--orange: hsl(26, 100%, 55%);
+	--paleorange: hsl(25, 100%, 94%);
+
+	/* Neutral Colors */
+
+	--veryvarkblue: hsl(220, 13%, 13%);
+	--darkgrayishblue: hsl(219, 9%, 45%);
+	--grayishblue: hsl(220, 14%, 75%);
+	--lightgrayishblue: hsl(223, 64%, 98%);
+	--white: hsl(0, 0%, 100%);
+	--blackwithopacity: hsl(0, 0%, 0%);
+}
+
+h1 {
+	width: 75%;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+}
+
+h2 {
+	color: var(--orange);
+	letter-spacing: 1px;
+	font-size: 1rem;
+	padding-bottom: 20px;
+}

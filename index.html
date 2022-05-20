@@ -9,22 +9,20 @@
 			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/styles.css" />
 		<title>Frontend Mentor | E-commerce product page</title>
 	</head>
 	<body>
-		<nav class="nav_mobile">
-			<div class="nav_div icon">
+		<nav class="navmobile">
+			<button class="navmobile__hamburger">
 				<img src="images/icon-menu.svg" alt="menu" />
-			</div>
-			<div class="nav_div menu">
-				<div class="nav_div div-closeicon">
-					<img
-						class="nav_div menu-closeicon"
-						src="images/icon-close.svg"
-					/>
+			</button>
+			<div class="navmobile__background hidden"></div>
+			<div class="navmobile__dropdownnav dropdownnav">
+				<div class="dropdownnav__closeicon">
+					<img src="images/icon-close.svg" />
 				</div>
-				<ul class="nav_div menulist">
+				<ul class="dropdownnav__menulist">
 					<li>Collections</li>
 					<li>Men</li>
 					<li>Women</li>
@@ -32,74 +30,69 @@
 					<li>Contact</li>
 				</ul>
 			</div>
-			<div class="nav_div logo">
+			<div class="navmobile__logo">
 				<img src="images/logo.svg" alt="Logo" />
 			</div>
-			<div class="nav_div cart">
-				<div class="nav_div cart--popup hidden">
-					<p class="nav_div cart--popupamount"></p>
+			<div class="navmobile__cart cart">
+				<div class="cart__popup cart__popup--orange hidden">
+					<p class="cart__popup cart__popup--amount"></p>
 				</div>
-				<button class="nav_div cart--carticon">
+				<button class="cart__button">
 					<img src="images/icon-cart.svg" alt="Cart" />
 				</button>
 			</div>
-			<div class="nav_div avatar">
+			<button class="navmobile__avatar">
 				<img src="images/image-avatar.png" alt="Avatar" />
-			</div>
+			</button>
 		</nav>
-		<main class="slider_mobile">
-			<div class="slide">
+		<main class="slider__mobile slider">
+			<div class="slider__img">
 				<img src="images/image-product-1.jpg" alt="Product1" />
 			</div>
-			<div class="slide">
+			<div class="slider__img">
 				<img src="images/image-product-2.jpg" alt="Product2" />
 			</div>
-			<div class="slide">
+			<div class="slider__img">
 				<img src="images/image-product-3.jpg" alt="Product2" />
 			</div>
-			<div class="slide">
+			<div class="slider__img">
 				<img src="images/image-product-4.jpg" alt="Product2" />
 			</div>
-			<button class="slider_icon slider_icon--previous">
+			<button class="slider__icon slider__icon--previous">
 				<img src="images/icon-previous.svg" />
 			</button>
-			<button class="slider_icon slider_icon--next">
+			<button class="slider__icon slider__icon--next">
 				<img src="images/icon-next.svg" />
 			</button>
-			<div class="slider_cart hidden">
-				<div class="slider_carttitle">
+			<div class="slider__cart cart hidden">
+				<div class="cart__title">
 					<h3>Cart</h3>
 				</div>
-				<div class="slider_cart--text hidden">
+				<div class="cart__text hidden">
 					<p>Your cart is empty.</p>
 				</div>
-				<div class="slider_cartorder hidden">
-					<div class="slider_cartorderimg">
+				<div class="cart__order cartproduct hidden">
+					<div class="cartproduct__img">
 						<img src="images/image-product-1-thumbnail.jpg" />
 					</div>
-					<div class="slider_cartorderdescription">
-						<p class="slider_cartordertitle">
+					<div class="cartproduct__description">
+						<p class="cartproduct__title">
 							Autumn Limited Edition...
 						</p>
-						<p class="slider_cartorderprice">
-							<span class="slider_cartorderprice--bold"></span>
+						<p class="cartprododuct__orderprice">
+							<span
+								class="cartproduct__orderprice cartproduct__orderprice--bold"
+							></span>
 						</p>
 					</div>
-					<div class="slider_cartorderdelete">
-						<img
-							class="slider_cartorderdelete--icon"
-							src="images/icon-delete.svg"
-						/>
+					<div class="cartproduct__deleteicon">
+						<img src="images/icon-delete.svg" />
 					</div>
-					<div class="slider_cartcheckout">
-						<button class="slider_cart--checkoutbutton">
-							Checkout
-						</button>
-					</div>
+					<button class="cartproduct__checkoutbtn">Checkout</button>
 				</div>
 			</div>
 		</main>
-		<section class="description_mobile">
+		<section class="section__mobile content">
 			<h2>SNEAKER COMPANY</h2>
 			<h1>Fall Limited Edition Sneakers</h1>
 			<p>
@@ -107,30 +100,33 @@
 				companion. Featuring a durable rubber outer sole, they'll
 				withstand everything the weather can offer.
 			</p>
-		</section>
-		<section class="pricing_mobile">
-			<div class="pricing_mobile--discountedprice">
-				<p>$125.00</p>
+			<div class="content__pricing price">
+				<div class="price__amount price__amount--discountedprice">
+					<p>$125.00</p>
+				</div>
+				<div class="price__amount price__amount--discount">
+					<p>50%</p>
+				</div>
+				<div class="price__amount price__amount--originalprice">
+					<p>$250.00</p>
+				</div>
 			</div>
-			<div class="pricing_mobile--discount"><p>50%</p></div>
-			<div class="pricing_mobile--originalprice"><p>$250.00</p></div>
-		</section>
-		<section class="cart_mobile">
-			<div class="cart_quantity">
-				<button class="cart_quantity--minus">
-					<img src="images/icon-minus.svg" />
-				</button>
-				<p class="cart_quantity-amount">1</p>
-				<button class="cart_quantity--plus">
-					<img src="images/icon-plus.svg" />
-				</button>
+			<div class="content__amountbtn quantity">
+				<div class="quantity__div amount">
+					<button class="amount__btn amount__btn--minus">
+						<img src="images/icon-minus.svg" />
+					</button>
+					<p class="amount__number">1</p>
+					<button class="amount__btn amount__btn--plus">
+						<img src="images/icon-plus.svg" />
+					</button>
+				</div>
+				<div class="quantity__div quantity__div--addtoCart">
+					<img src="images/icon-cart.svg" />
+					<p>Add to cart</p>
+				</div>
 			</div>
-			<button class="cart_add">
-				<img src="images/icon-cart.svg" />
-				<p>Add to cart</p>
-			</button>
 		</section>
-
 		<script src="script.js"></script>
 	</body>
 </html>

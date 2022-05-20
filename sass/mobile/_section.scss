@@ -1,0 +1,68 @@
+.section__mobile {
+	padding: 20px;
+	> p {
+		color: var(--darkgrayishblue);
+		line-height: 1.3rem;
+		padding-bottom: 20px;
+	}
+	.content__pricing {
+		display: flex;
+		align-items: center;
+		padding-bottom: 20px;
+		.price__amount--discountedprice {
+			font-weight: 700;
+			font-size: 1.5rem;
+			font-style: bold;
+			width: 90px;
+		}
+
+		.price__amount--discount {
+			color: var(--orange);
+			border-radius: 10%;
+			padding: 3px;
+			flex-grow: 4;
+			p {
+				background-color: var(--paleorange);
+				display: inline;
+				padding: 3px;
+				font-weight: 700;
+				border-radius: 5px;
+			}
+		}
+		.price__amount--originalprice {
+			color: var(--grayishblue);
+			text-decoration: line-through;
+		}
+	}
+	.quantity__div {
+		border-radius: 5px;
+		background-color: var(--lightgrayishblue);
+		padding: 15px;
+		display: flex;
+		justify-content: space-between;
+		height: 50px;
+		align-items: center;
+		border: none;
+		> button {
+			display: flex;
+			align-items: center;
+			border: none;
+			background-color: var(--lightgrayishblue);
+		}
+		&.quantity__div--addtoCart {
+			color: white;
+			width: 100%;
+			border: none;
+			padding: 15px;
+			background-color: var(--orange);
+			border-radius: 5px;
+			display: flex;
+			font-weight: 400;
+			justify-content: center;
+			align-items: center;
+			font-size: 1rem;
+			height: 50px;
+			margin-top: 20px;
+		}
+	}
+}
