@@ -1,5 +1,13 @@
-const slides = document.querySelectorAll(".slider__img");
+const activeSlide = document.querySelectorAll(".slider__img.active");
+const thumbnailImg = document.querySelectorAll("[data-info]");
+const thumbnailSlider = document.querySelector(".slider__desktop");
+const desktopImg = document.querySelector(".hi");
+const lightboxImg = document.querySelector(".ho");
+const sliderLightbox = document.querySelector(".slider__background");
+const lightboxClose = document.querySelector(".content__button--close");
 const nextBtn = document.querySelector(".slider__icon--next");
+const prevBtnLightbox = document.querySelector(".content__button--previous");
+const nextBtnLightbox = document.querySelector(".content__button--next");
 const prevBtn = document.querySelector(".slider__icon--previous");
 const plusBtn = document.querySelector(".amount__btn--plus");
 const minusBtn = document.querySelector(".amount__btn--minus");
@@ -25,18 +33,43 @@ const navmenuClose = document.querySelector(".dropdownnav__closeicon");
 
 let currentSlide = 1;
 let priceIndex = 1;
+let flag = true;
+let imgId = 1;
 
 navMenu.addEventListener("click", () => {
-	console.log("hi");
 	hideCart();
 	showAnimation();
 	translucentBackground.classList.remove("hidden");
 });
 
-slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+if (window.outerWidth < 500) {
+	activeSlide.forEach((s, i) => {
+		s.style.transform = `translateX(${100 * i}%)`;
+	});
+}
+
+if (window.outerWidth > 500) {
+	activeSlide.forEach((slide) => {
+		slide.addEventListener("click", (event) => {
+			imgId = event.target.dataset.info;
+			if (flag) {
+				desktopImg.src = `images/image-product-${imgId}.jpg`;
+			}
+			if (!flag) {
+				lightboxImg.src = `images/image-product-${imgId}.jpg`;
+			}
+			event.target.classList.add("clicked");
+			thumbnailImg.forEach((img) => {
+				if (img.dataset.info !== imgId) {
+					img.classList.remove("clicked");
+				}
+			});
+		});
+	});
+}
 
 const moveSlider = () => {
-	slides.forEach(
+	activeSlide.forEach(
 		(s, i) =>
 			(s.style.transform = `translateX(${(i - currentSlide) * 100}%)`)
 	);
@@ -103,22 +136,39 @@ addtoCart.addEventListener("click", () => {
 	}</span>`;
 });
 
-navcartIcon.addEventListener("click", (e) => {
-	if (!navMenuBar.classList.contains("showanimation")) {
-		toggleCart();
-		showOrder();
-	}
-	if (navMenuBar.classList.contains("showanimation")) {
-		hideAnimation();
-		if (sliderCart.classList.contains("hidden")) {
+if (window.outerWidth < 500) {
+	navcartIcon.addEventListener("click", (e) => {
+		if (!navMenuBar.classList.contains("showanimation")) {
+			toggleCart();
 			showOrder();
-			sliderCart.classList.remove("hidden");
 		}
-	}
-});
+		if (navMenuBar.classList.contains("showanimation")) {
+			hideAnimation();
+			if (sliderCart.classList.contains("hidden")) {
+				showOrder();
+				sliderCart.classList.remove("hidden");
+			}
+		}
+	});
+}
+
+if (window.outerWidth > 500) {
+	navcartIcon.addEventListener("click", (e) => {
+		if (!navMenuBar.classList.contains("showanimation")) {
+			toggleCart();
+			showOrder();
+		}
+		if (navMenuBar.classList.contains("showanimation")) {
+			hideAnimation();
+			if (sliderCart.classList.contains("hidden")) {
+				showOrder();
+				sliderCart.classList.remove("hidden");
+			}
+		}
+	});
+}
 
 cartOrderdelete.addEventListener("click", () => {
-	hideAnimation();
 	cartPopupamount.textContent = 0;
 	cartPopup.classList.add("hidden");
 	emptyCart();
@@ -165,4 +215,44 @@ document.body.addEventListener("click", (e) => {
 			translucentBackground.classList.add("hidden");
 		}
 	}
+});
+
+desktopImg.addEventListener("click", () => {
+	sliderLightbox.classList.remove("hidden");
+	flag = false;
+	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
+});
+
+lightboxClose.addEventListener("click", () => {
+	sliderLightbox.classList.add("hidden");
+	flag = true;
+	thumbnailImg.forEach((img) => {
+		img.classList.remove("clicked");
+	});
+	imgId = 1;
+});
+
+prevBtnLightbox.addEventListener("click", () => {
+	imgId--;
+	if (imgId == 0) imgId = 4;
+	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
+	thumbnailImg.forEach((img) => {
+		if (img.dataset.info != imgId) {
+			img.classList.remove("clicked");
+		}
+	});
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
+});
+
+nextBtnLightbox.addEventListener("click", () => {
+	imgId++;
+	if (imgId > 4) imgId = 1;
+	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
+	thumbnailImg.forEach((img) => {
+		if (img.dataset.info != imgId) {
+			img.classList.remove("clicked");
+		}
+	});
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
 });

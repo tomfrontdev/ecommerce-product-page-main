@@ -1,5 +1,5 @@
 .section__mobile {
-	padding: 20px;
+	// padding: 20px;
 	> p {
 		color: var(--darkgrayishblue);
 		line-height: 1.3rem;
@@ -51,8 +51,8 @@
 		}
 		&.quantity__div--addtoCart {
 			color: white;
-			width: 100%;
 			border: none;
+			width: 100%;
 			padding: 15px;
 			background-color: var(--orange);
 			border-radius: 5px;
@@ -62,7 +62,6 @@
 			align-items: center;
 			font-size: 1rem;
 			height: 50px;
-			margin-top: 20px;
 		}
 	}
 }

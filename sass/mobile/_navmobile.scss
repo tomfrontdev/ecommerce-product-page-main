@@ -82,33 +82,4 @@
 			animation-name: hideBackground;
 		}
 	}
-
-	.navmobile__cart {
-		position: relative;
-		.cart__popup {
-			&.cart__popup--orange {
-				color: var(--white);
-				font-size: 0.75rem;
-				width: 14px;
-				height: 14px;
-				background-color: var(--orange);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: absolute;
-				border-radius: 100%;
-				right: 6px;
-				top: 20%;
-				&.hidden {
-					display: none;
-				}
-			}
-		}
-		.cart__button {
-			img {
-				height: 20px;
-				width: 20px;
-			}
-		}
-	}
 }
