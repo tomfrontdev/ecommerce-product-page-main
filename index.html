@@ -9,25 +9,16 @@
 			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link
-			rel="stylesheet"
-			media="(max-width: 500px)"
-			href="css/styles.css"
-		/>
-		<link
-			rel="stylesheet"
-			media="(min-width: 501px)"
-			href="css/desktop.css"
-		/>
+		<link rel="stylesheet" href="css/styles.css" />
 		<title>Frontend Mentor | E-commerce product page</title>
 	</head>
 	<body>
-		<nav class="navmobile">
-			<button class="navmobile__hamburger hidden">
+		<nav class="nav">
+			<button class="nav__hamburger hidden">
 				<img src="images/icon-menu.svg" alt="menu" />
 			</button>
-			<div class="navmobile__background hidden"></div>
-			<div class="navmobile__dropdownnav dropdownnav">
+			<div class="nav__background hidden"></div>
+			<div class="nav__dropdownnav dropdownnav">
 				<div class="dropdownnav__closeicon hidden">
 					<img src="images/icon-close.svg" />
 				</div>
@@ -39,10 +30,10 @@
 					<li>Contact</li>
 				</ul>
 			</div>
-			<div class="navmobile__logo">
+			<div class="nav__logo">
 				<img src="images/logo.svg" alt="Logo" />
 			</div>
-			<div class="navmobile__cart cart">
+			<div class="nav__cart cart">
 				<div class="cart__popup cart__popup--orange hidden">
 					<p class="cart__popup cart__popup--amount"></p>
 				</div>
@@ -50,12 +41,12 @@
 					<img src="images/icon-cart.svg" alt="Cart" />
 				</button>
 			</div>
-			<button class="navmobile__avatar">
+			<button class="nav__avatar">
 				<img src="images/image-avatar.png" alt="Avatar" />
 			</button>
 		</nav>
-		<main class="slider123">
-			<section class="slider">
+		<main class="slider">
+			<section class="slider__images">
 				<div class="slider__img hidden">
 					<img
 						src="images/image-product-1.jpg"
@@ -179,7 +170,7 @@
 					<img src="images/icon-next.svg" />
 				</button>
 			</section>
-			<section class="section__mobile content">
+			<section class="slider__text">
 				<h2>SNEAKER COMPANY</h2>
 				<h1>Fall Limited Edition Sneakers</h1>
 				<p>
