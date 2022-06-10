@@ -24,8 +24,8 @@ const sliderCart = document.querySelector(".slider__cart");
 const sliderCarttext = document.querySelector(".cart__text");
 const sliderCartorder = document.querySelector(".cart__order");
 const sliderCartorderprice = document.querySelector(".cartproduct__orderprice");
-const sliderCartorderspan = document.querySelector(
-	".cartproduct__orderprice--bold"
+const sliderCartorderpricebold = document.querySelector(
+	".cartproduct__boldorderprice"
 );
 const translucentBackground = document.querySelector(".nav__background");
 const cartOrderdelete = document.querySelector(".cartproduct__deleteicon");
@@ -123,11 +123,10 @@ addtoCart.addEventListener("click", () => {
 	cartPopupamount.textContent = +cartPopupamount.textContent + priceIndex;
 	cartPopup.classList.remove("hidden");
 	if (!sliderCart.classList.contains("hidden")) showOrder();
-	sliderCartorderprice.innerHTML = `$125.00 x ${
-		cartPopupamount.textContent
-	} <span class="cartproduct__orderprice--bold">$${
+	sliderCartorderprice.textContent = `$125.00 x ${cartPopupamount.textContent}`;
+	sliderCartorderpricebold.textContent = `$${
 		125 * cartPopupamount.textContent
-	}</span>`;
+	}`;
 });
 
 cartOrderdelete.addEventListener("click", () => {
