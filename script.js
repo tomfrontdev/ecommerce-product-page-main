@@ -36,22 +36,6 @@ let priceIndex = 1;
 let flag = true;
 let imgId = 1;
 
-showMobileCart = () => {
-	navcartIcon.addEventListener("click", (e) => {
-		if (!navMenuBar.classList.contains("showanimation")) {
-			toggleCart();
-			showOrder();
-		}
-		if (navMenuBar.classList.contains("showanimation")) {
-			hideAnimation();
-			if (sliderCart.classList.contains("hidden")) {
-				showOrder();
-				sliderCart.classList.remove("hidden");
-			}
-		}
-	});
-};
-
 switchImg = () => {
 	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
 	thumbnailImg.forEach((img) => {
@@ -196,7 +180,6 @@ if (window.outerWidth < 500) {
 	activeSlide.forEach((s, i) => {
 		s.style.transform = `translateX(${100 * i}%)`;
 	});
-	showMobileCart();
 }
 
 if (window.outerWidth > 500) {
@@ -235,6 +218,20 @@ document.body.addEventListener("click", (e) => {
 		) {
 			hideAnimation();
 			translucentBackground.classList.add("hidden");
+		}
+	}
+});
+
+navcartIcon.addEventListener("click", (e) => {
+	if (!navMenuBar.classList.contains("showanimation")) {
+		toggleCart();
+		showOrder();
+	}
+	if (navMenuBar.classList.contains("showanimation")) {
+		hideAnimation();
+		if (sliderCart.classList.contains("hidden")) {
+			showOrder();
+			sliderCart.classList.remove("hidden");
 		}
 	}
 });

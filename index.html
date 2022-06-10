@@ -41,6 +41,33 @@
 					<img src="images/icon-cart.svg" alt="Cart" />
 				</button>
 			</div>
+			<div class="slider__cart cart hidden">
+				<div class="cart__title">
+					<h3>Cart</h3>
+				</div>
+				<div class="cart__line"></div>
+				<div class="cart__text hidden">
+					<p>Your cart is empty.</p>
+				</div>
+				<div class="cart__order cartproduct hidden">
+					<div class="cartproduct__img">
+						<img src="images/image-product-1-thumbnail.jpg" />
+					</div>
+					<div class="cartproduct__description">
+						<p class="cartproduct__title">
+							Autumn Limited Edition...
+						</p>
+						<div class="cartproduct__prices">
+							<p class="cartproduct__orderprice"></p>
+							<p class="cartproduct__boldorderprice"></p>
+						</div>
+					</div>
+					<div class="cartproduct__deleteicon">
+						<img src="images/icon-delete.svg" />
+					</div>
+					<button class="cartproduct__checkoutbtn">Checkout</button>
+				</div>
+			</div>
 			<button class="nav__avatar">
 				<img src="images/image-avatar.png" alt="Avatar" />
 			</button>
@@ -53,35 +80,6 @@
 						class="hi"
 						alt="Product1"
 					/>
-				</div>
-				<div class="slider__cart cart hidden">
-					<div class="cart__title">
-						<h3>Cart</h3>
-					</div>
-					<div class="cart__line"></div>
-					<div class="cart__text hidden">
-						<p>Your cart is empty.</p>
-					</div>
-					<div class="cart__order cartproduct hidden">
-						<div class="cartproduct__img">
-							<img src="images/image-product-1-thumbnail.jpg" />
-						</div>
-						<div class="cartproduct__description">
-							<p class="cartproduct__title">
-								Autumn Limited Edition...
-							</p>
-							<div class="cartproduct__prices">
-								<p class="cartproduct__orderprice"></p>
-								<p class="cartproduct__boldorderprice"></p>
-							</div>
-						</div>
-						<div class="cartproduct__deleteicon">
-							<img src="images/icon-delete.svg" />
-						</div>
-						<button class="cartproduct__checkoutbtn">
-							Checkout
-						</button>
-					</div>
 				</div>
 				<div class="slider__background hidden content">
 					<div class="content__largeimg slider__img hidden">
@@ -180,13 +178,11 @@
 				</p>
 				<div class="content__pricing price">
 					<div class="price__amount price__amount--discountedprice">
-						<p>$125.00</p>
+						$125.00
 					</div>
-					<div class="price__amount price__amount--discount">
-						<p>50%</p>
-					</div>
+					<div class="price__amount price__amount--discount">50%</div>
 					<div class="price__amount price__amount--originalprice">
-						<p>$250.00</p>
+						$250.00
 					</div>
 				</div>
 				<div class="content__amountbtn quantity">
