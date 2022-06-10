@@ -164,6 +164,10 @@ lightboxClose.addEventListener("click", () => {
 	imgId = 1;
 });
 
+sliderLightbox.addEventListener("click", (e) => {
+	if (e.target == e.currentTarget) sliderLightbox.classList.add("hidden");
+});
+
 prevBtnLightbox.addEventListener("click", () => {
 	imgId--;
 	if (imgId == 0) imgId = 4;

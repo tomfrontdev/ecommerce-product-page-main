@@ -85,10 +85,11 @@
 				display: none;
 			}
 		}
+
 		.cart__order {
 			display: grid;
-			grid-template-columns: minmax(50px, 75px) 1fr 10px;
-			gap: 10%;
+			grid-template-columns: 60px 1fr 20px;
+			gap: 10px;
 			padding-top: 40px;
 			// position: relative;
 			&.hidden {
@@ -233,8 +234,8 @@
 		}
 		.cart__order {
 			display: grid;
-			grid-template-columns: 60px 1fr 10px;
-			gap: 15px;
+			grid-template-columns: 60px 1fr 20px;
+			gap: 10px;
 			position: relative;
 			&.hidden {
 				display: none;
