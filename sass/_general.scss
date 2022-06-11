@@ -7,6 +7,7 @@
 body {
 	max-width: 1000px;
 	margin: auto;
+	font-family: "Kumbh Sans", sans-serif;
 }
 
 button {
@@ -33,14 +34,12 @@ h1 {
 	width: 100%;
 	font-size: 2rem;
 	letter-spacing: 1px;
-	padding-bottom: 10px;
 }
 
 h2 {
 	color: var(--orange);
 	letter-spacing: 1px;
 	font-size: 1rem;
-	padding-bottom: 20px;
 }
 
 img {

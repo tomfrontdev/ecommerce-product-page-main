@@ -36,16 +36,6 @@ let priceIndex = 1;
 let flag = true;
 let imgId = 1;
 
-switchImg = () => {
-	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
-	thumbnailImg.forEach((img) => {
-		if (img.dataset.info != imgId) {
-			img.classList.remove("clicked");
-		}
-	});
-	lightboxImg.src = `images/image-product-${imgId}.jpg`;
-};
-
 moveSlider = () => {
 	activeSlide.forEach(
 		(s, i) =>
@@ -161,23 +151,37 @@ lightboxClose.addEventListener("click", () => {
 	thumbnailImg.forEach((img) => {
 		img.classList.remove("clicked");
 	});
+	console.log("Hi");
 	imgId = 1;
 });
 
 sliderLightbox.addEventListener("click", (e) => {
 	if (e.target == e.currentTarget) sliderLightbox.classList.add("hidden");
+	flag = true;
 });
 
 prevBtnLightbox.addEventListener("click", () => {
 	imgId--;
 	if (imgId == 0) imgId = 4;
-	switchImg();
+	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
+	thumbnailImg.forEach((img) => {
+		if (img.dataset.info != imgId) {
+			img.classList.remove("clicked");
+		}
+	});
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
 });
 
 nextBtnLightbox.addEventListener("click", () => {
 	imgId++;
 	if (imgId > 4) imgId = 1;
-	switchImg();
+	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
+	thumbnailImg.forEach((img) => {
+		if (img.dataset.info != imgId) {
+			img.classList.remove("clicked");
+		}
+	});
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
 });
 
 if (window.outerWidth < 500) {

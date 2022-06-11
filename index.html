@@ -5,10 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
 		<link rel="stylesheet" href="css/styles.css" />
 		<title>Frontend Mentor | E-commerce product page</title>
 	</head>
@@ -177,12 +173,18 @@
 					withstand everything the weather can offer.
 				</p>
 				<div class="content__pricing price">
-					<div class="price__amount price__amount--discountedprice">
-						$125.00
+					<div class="price__flexbox">
+						<div
+							class="price__amount price__amount--discountedprice"
+						>
+							<p>$125.00</p>
+						</div>
+						<div class="price__amount price__amount--discount">
+							<p>50%</p>
+						</div>
 					</div>
-					<div class="price__amount price__amount--discount">50%</div>
 					<div class="price__amount price__amount--originalprice">
-						$250.00
+						<p>$250.00</p>
 					</div>
 				</div>
 				<div class="content__amountbtn quantity">

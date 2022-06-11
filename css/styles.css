@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 @media (max-width: 549px) {
   .nav {
     display: flex;
@@ -164,6 +165,7 @@
 body {
   max-width: 1000px;
   margin: auto;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 button {
@@ -188,14 +190,12 @@ h1 {
   width: 100%;
   font-size: 2rem;
   letter-spacing: 1px;
-  padding-bottom: 10px;
 }
 
 h2 {
   color: var(--orange);
   letter-spacing: 1px;
   font-size: 1rem;
-  padding-bottom: 20px;
 }
 
 img {
@@ -210,34 +210,41 @@ img {
     color: var(--darkgrayishblue);
     line-height: 1.3rem;
   }
+  .slider__text > * {
+    margin-bottom: 20px;
+  }
   .slider__text .content__pricing {
+    position: relative;
+  }
+  .slider__text .content__pricing .price__flexbox {
     display: flex;
     align-items: center;
-    padding-top: 10px;
   }
   .slider__text .content__pricing .price__amount--discountedprice {
-    font-weight: 700;
     font-size: 1.5rem;
-    font-style: bold;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    display: inline-block;
   }
   .slider__text .content__pricing .price__amount--discount {
     color: var(--orange);
     border-radius: 10%;
     background-color: var(--paleorange);
-    padding: 3px;
+    padding: 2px;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 1.2rem;
-    vertical-align: top;
+    display: inline-block;
   }
   .slider__text .content__pricing .price__amount--originalprice {
     color: var(--grayishblue);
     text-decoration: line-through;
     position: absolute;
-    right: 20px;
+    right: 0;
+    top: 5px;
   }
   .slider__text .quantity__div {
     border-radius: 5px;
-    margin-top: 10px;
     background-color: var(--lightgrayishblue);
     padding: 15px;
     display: flex;
@@ -253,11 +260,11 @@ img {
     background-color: var(--lightgrayishblue);
   }
   .slider__text .quantity__div.quantity__div--addtoCart {
+    margin-top: 20px;
     color: white;
     border: none;
     width: 100%;
     padding: 15px;
-    margin-top: 10px;
     background-color: var(--orange);
     border-radius: 5px;
     display: flex;
@@ -326,30 +333,33 @@ img {
   .slider__text .content__pricing {
     padding-top: 10px;
   }
+  .slider__text .content__pricing .price__flexbox {
+    display: flex;
+  }
   .slider__text .content__pricing .price__amount--discountedprice {
     font-weight: 700;
     font-size: 1.5rem;
-    font-style: bold;
-    display: inline-block;
+    margin-right: 15px;
   }
   .slider__text .content__pricing .price__amount--discount {
     color: var(--orange);
-    border-radius: 10%;
+    align-items: center;
+    display: flex;
+  }
+  .slider__text .content__pricing .price__amount--discount p {
     background-color: var(--paleorange);
-    padding: 3px;
+    padding: 4px;
+    border-radius: 10%;
     font-weight: 700;
-    font-size: 1.2rem;
-    display: inline-block;
-    vertical-align: top;
   }
   .slider__text .content__pricing .price__amount--originalprice {
+    margin-top: 7px;
     color: var(--grayishblue);
     text-decoration: line-through;
     display: block;
   }
   .slider__text .quantity__div {
     border-radius: 5px;
-    margin-top: 10px;
     background-color: var(--lightgrayishblue);
     padding: 15px;
     display: flex;
@@ -369,7 +379,6 @@ img {
     border: none;
     width: 100%;
     padding: 15px;
-    margin-top: 10px;
     background-color: var(--orange);
     border-radius: 5px;
     display: flex;
@@ -595,18 +604,17 @@ img {
     z-index: 1;
     width: calc(100% - 40px);
     margin: 20px;
-    height: 300px;
-    top: 30px;
+    height: 250px;
+    top: 40px;
     left: 0;
     background-color: var(--white);
     border-radius: 10px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
   }
   .slider__cart.hidden {
     display: none;
-  }
-  .slider__cart .cart__title {
-    font-weight: 700;
   }
   .slider__cart .cart__title.hidden {
     display: none;
@@ -623,6 +631,7 @@ img {
   .slider__cart .cart__text {
     width: 100%;
     height: 100%;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -635,6 +644,7 @@ img {
     display: grid;
     grid-template-columns: 60px 1fr 20px;
     gap: 10px;
+    padding-bottom: 40px;
     padding-top: 40px;
   }
   .slider__cart .cart__order.hidden {
@@ -737,7 +747,6 @@ img {
     display: none;
   }
   .slider__cart .cart__title {
-    font-weight: 700;
     padding-bottom: 40px;
   }
   .slider__cart .cart__title.hidden {
@@ -755,6 +764,7 @@ img {
   .slider__cart .cart__text {
     width: 100%;
     height: 100%;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
