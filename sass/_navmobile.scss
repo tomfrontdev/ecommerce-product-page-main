@@ -1,0 +1,229 @@
+@media (max-width: 549px) {
+	.nav {
+		display: flex;
+		align-items: center;
+
+		> * {
+			padding: 10px;
+		}
+
+		button {
+			cursor: pointer;
+		}
+
+		.nav__logo {
+			flex-grow: 4;
+		}
+
+		.nav__avatar {
+			img {
+				height: 25px;
+				width: 25px;
+			}
+		}
+
+		.nav__dropdownnav {
+			height: 1000px;
+			min-width: 200px;
+			background-color: var(--white);
+			animation-duration: 0.5s;
+			display: block;
+			position: absolute;
+			z-index: 1;
+			left: -200px;
+			top: 0;
+			flex-direction: column;
+			font-weight: 700;
+			padding: 0;
+			&.showanimation {
+				animation-name: showDropdawn;
+				animation-fill-mode: forwards;
+			}
+			&.hideanimation {
+				animation-name: hideDropdawn;
+			}
+			> * {
+				cursor: pointer;
+			}
+			.dropdownnav__closeicon {
+				padding: 15px;
+			}
+			.dropdownnav__menulist {
+				list-style-type: none;
+				display: inline-block;
+				margin-right: auto;
+				padding: 15px 15px 0 15px;
+				> li {
+					padding-bottom: 15px;
+				}
+			}
+		}
+
+		.nav__background {
+			animation-duration: 0.5s;
+			height: 1000px;
+			width: 100%;
+			background-color: hsl(0, 0%, 70%);
+			opacity: 0.5;
+			z-index: 1;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			flex-direction: column;
+			animation-fill-mode: forwards;
+			&.hidden {
+				display: none;
+			}
+			&.showanimation {
+				animation-name: showBackground;
+			}
+			&.hideanimation {
+				animation-name: hideBackground;
+			}
+		}
+		.nav__basket {
+			position: relative;
+			.cart__popup {
+				position: absolute;
+				&.cart__popup--orange {
+					color: var(--white);
+					font-size: 0.75rem;
+					width: 14px;
+					height: 14px;
+					background-color: var(--orange);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 100%;
+					right: 6px;
+					top: 20%;
+					&.hidden {
+						display: none;
+					}
+				}
+			}
+			.cart__button {
+				img {
+					height: 20px;
+					width: 20px;
+				}
+			}
+		}
+
+		.cartproduct__checkoutbtn {
+			width: 100%;
+			border: none;
+			background-color: var(--orange);
+			color: var(--white);
+			padding: 20px;
+			border-radius: 10px;
+			grid-column: 1 / -1;
+		}
+
+		.cartproduct__deleteicon {
+			display: flex;
+			align-items: center;
+		}
+
+		.nav__cart {
+			padding: 20px;
+			z-index: 1;
+			width: calc(100% - 40px);
+			margin: 20px;
+			height: 250px;
+			top: 40px;
+			left: 0;
+			background-color: var(--white);
+			border-radius: 10px;
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			&.hidden {
+				display: none;
+			}
+
+			.cart__title {
+				&.hidden {
+					display: none;
+				}
+			}
+			.cart__line {
+				width: 100%;
+				background-color: grey;
+				height: 0.5px;
+				opacity: 0.5;
+				position: absolute;
+				left: 0;
+				top: 65px;
+			}
+			.cart__text {
+				width: 100%;
+				height: 100%;
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--darkgrayishblue);
+				&.hidden {
+					display: none;
+				}
+			}
+
+			.cart__order {
+				display: grid;
+				grid-template-columns: 60px 1fr 20px;
+				gap: 10px;
+				padding-bottom: 40px;
+				padding-top: 40px;
+				// position: relative;
+				&.hidden {
+					display: none;
+				}
+				.cartproduct__img {
+					> img {
+						height: 100%;
+						width: 100%;
+						border-radius: 10%;
+					}
+				}
+			}
+			.cartproduct__description {
+				color: var(--darkgrayishblue);
+				> p {
+					padding: 5px;
+				}
+				.cartproduct__prices {
+					display: flex;
+					padding: 5px;
+					.cartproduct__boldorderprice {
+						font-weight: 700;
+						margin-left: 5px;
+					}
+				}
+			}
+
+			.cartproduct__deleteicon {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.cartproduct__checkoutbtn {
+			width: 100%;
+			border: none;
+			background-color: var(--orange);
+			color: var(--white);
+			padding: 20px;
+			margin-top: 20px;
+			border-radius: 10px;
+			grid-column: 1 / -1;
+		}
+
+		.cartproduct__deleteicon {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+

@@ -17,10 +17,10 @@ const amount = document.querySelector(".amount__number");
 const addtoCart = document.querySelector(".quantity__div--addtoCart");
 const navMenu = document.querySelector(".nav__hamburger");
 const navMenuBar = document.querySelector(".nav__dropdownnav");
-const navcartIcon = document.querySelector(".nav__cart");
+const navcartIcon = document.querySelector(".nav__basket");
 const cartPopup = document.querySelector(".cart__popup--orange");
 const cartPopupamount = document.querySelector(".cart__popup--amount");
-const sliderCart = document.querySelector(".slider__cart");
+const sliderCart = document.querySelector(".nav__cart");
 const sliderCarttext = document.querySelector(".cart__text");
 const sliderCartorder = document.querySelector(".cart__order");
 const sliderCartorderprice = document.querySelector(".cartproduct__orderprice");
@@ -213,8 +213,8 @@ if (window.outerWidth > 500) {
 document.body.addEventListener("click", (e) => {
 	if (!sliderCart.classList.contains("hidden")) {
 		if (
-			!e.target.closest(".slider__cart") &&
 			!e.target.closest(".nav__cart") &&
+			!e.target.closest(".nav__basket") &&
 			!e.target.closest(".content__amountbtn")
 		)
 			hideCart();
