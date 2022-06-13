@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>Frontend Mentor | E-commerce product page</title>
+	</head>
+	<body>
+		<nav class="nav">
+			<button class="nav__hamburger hidden">
+				<img src="images/icon-menu.svg" alt="menu" />
+			</button>
+			<div class="nav__background hidden"></div>
+			<div class="nav__dropdownnav dropdownnav">
+				<div class="dropdownnav__closeicon hidden">
+					<img src="images/icon-close.svg" />
+				</div>
+				<ul class="dropdownnav__menulist">
+					<li>Collections</li>
+					<li>Men</li>
+					<li>Women</li>
+					<li>About</li>
+					<li>Contact</li>
+				</ul>
+			</div>
+			<div class="nav__logo">
+				<img src="images/logo.svg" alt="Logo" />
+			</div>
+			<div class="nav__basket cart">
+				<div class="cart__popup cart__popup--orange hidden">
+					<p class="cart__popup cart__popup--amount"></p>
+				</div>
+				<button class="cart__button">
+					<img src="images/icon-cart.svg" alt="Cart" />
+				</button>
+			</div>
+			<div class="nav__cart cart hidden">
+				<div class="cart__title">
+					<h3>Cart</h3>
+				</div>
+				<div class="cart__line"></div>
+				<div class="cart__text hidden">
+					<p>Your cart is empty.</p>
+				</div>
+				<div class="cart__order cartproduct hidden">
+					<div class="cartproduct__img">
+						<img src="images/image-product-1-thumbnail.jpg" />
+					</div>
+					<div class="cartproduct__description">
+						<p class="cartproduct__title">
+							Autumn Limited Edition...
+						</p>
+						<div class="cartproduct__prices">
+							<p class="cartproduct__orderprice"></p>
+							<p class="cartproduct__boldorderprice"></p>
+						</div>
+					</div>
+					<div class="cartproduct__deleteicon">
+						<img src="images/icon-delete.svg" />
+					</div>
+					<button class="cartproduct__checkoutbtn">Checkout</button>
+				</div>
+			</div>
+			<button class="nav__avatar">
+				<img src="images/image-avatar.png" alt="Avatar" />
+			</button>
+		</nav>
+		<main class="slider">
+			<section class="slider__images">
+				<div class="slider__img hidden">
+					<img
+						src="images/image-product-1.jpg"
+						class="hi"
+						alt="Product1"
+					/>
+				</div>
+				<div class="slider__background hidden content">
+					<div class="content__largeimg slider__img hidden">
+						<img
+							src="images/image-product-1.jpg"
+							class="ho"
+							alt="Product1"
+						/>
+						<button
+							class="content__button content__button--previous"
+						>
+							<img src="images/icon-previous.svg" />
+						</button>
+						<button class="content__button content__button--next">
+							<img src="images/icon-next.svg" />
+						</button>
+						<button class="content__button content__button--close">
+							<img src="images/icon-close.svg" />
+						</button>
+					</div>
+					<div class="content__thumbnailimg">
+						<div class="slider__img">
+							<img
+								src="images/image-product-1.jpg"
+								alt="Product1"
+								data-info="1"
+							/>
+						</div>
+						<div class="slider__img">
+							<img
+								src="images/image-product-2.jpg"
+								alt="Product2"
+								data-info="2"
+							/>
+						</div>
+						<div class="slider__img">
+							<img
+								src="images/image-product-3.jpg"
+								alt="Product3"
+								data-info="3"
+							/>
+						</div>
+						<div class="slider__img">
+							<img
+								src="images/image-product-4.jpg"
+								alt="Product4"
+								data-info="4"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="slider__desktop">
+					<div class="slider__img">
+						<img
+							src="images/image-product-1.jpg"
+							alt="Product1"
+							data-info="1"
+						/>
+					</div>
+					<div class="slider__img">
+						<img
+							src="images/image-product-2.jpg"
+							alt="Product2"
+							data-info="2"
+						/>
+					</div>
+					<div class="slider__img">
+						<img
+							src="images/image-product-3.jpg"
+							alt="Product2"
+							data-info="3"
+						/>
+					</div>
+					<div class="slider__img">
+						<img
+							src="images/image-product-4.jpg"
+							alt="Product2"
+							data-info="4"
+						/>
+					</div>
+				</div>
+				<button class="slider__icon slider__icon--previous">
+					<img src="images/icon-previous.svg" />
+				</button>
+				<button class="slider__icon slider__icon--next">
+					<img src="images/icon-next.svg" />
+				</button>
+			</section>
+			<section class="slider__text">
+				<h2>SNEAKER COMPANY</h2>
+				<h1>Fall Limited Edition Sneakers</h1>
+				<p>
+					These low-profile sneakers are your perfect casual wear
+					companion. Featuring a durable rubber outer sole, they'll
+					withstand everything the weather can offer.
+				</p>
+				<div class="content__pricing price">
+					<div class="price__flexbox">
+						<div
+							class="price__amount price__amount--discountedprice"
+						>
+							<p>$125.00</p>
+						</div>
+						<div class="price__amount price__amount--discount">
+							<p>50%</p>
+						</div>
+					</div>
+					<div class="price__amount price__amount--originalprice">
+						<p>$250.00</p>
+					</div>
+				</div>
+				<div class="content__amountbtn quantity">
+					<div class="quantity__div amount">
+						<button class="amount__btn amount__btn--minus">
+							<img src="images/icon-minus.svg" />
+						</button>
+						<p class="amount__number">1</p>
+						<button class="amount__btn amount__btn--plus">
+							<img src="images/icon-plus.svg" />
+						</button>
+					</div>
+					<div class="quantity__div quantity__div--addtoCart">
+						<img src="images/icon-cart.svg" />
+						<p>Add to cart</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

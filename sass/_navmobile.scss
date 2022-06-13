@@ -22,7 +22,7 @@
 			}
 		}
 
-		.nav__dropdownnav {
+		.nav__dropdown {
 			height: 1000px;
 			min-width: 200px;
 			background-color: var(--white);
@@ -45,10 +45,10 @@
 			> * {
 				cursor: pointer;
 			}
-			.dropdownnav__closeicon {
+			.nav__dropdownclose {
 				padding: 15px;
 			}
-			.dropdownnav__menulist {
+			.nav__dropdownmenu {
 				list-style-type: none;
 				display: inline-block;
 				margin-right: auto;
@@ -84,9 +84,9 @@
 		}
 		.nav__basket {
 			position: relative;
-			.cart__popup {
+			.nav__basketpopup {
 				position: absolute;
-				&.cart__popup--orange {
+				&.nav__basketpopup--orange {
 					color: var(--white);
 					font-size: 0.75rem;
 					width: 14px;
@@ -103,7 +103,7 @@
 					}
 				}
 			}
-			.cart__button {
+			.nav__basketbtn {
 				img {
 					height: 20px;
 					width: 20px;
@@ -111,17 +111,7 @@
 			}
 		}
 
-		.cartproduct__checkoutbtn {
-			width: 100%;
-			border: none;
-			background-color: var(--orange);
-			color: var(--white);
-			padding: 20px;
-			border-radius: 10px;
-			grid-column: 1 / -1;
-		}
-
-		.cartproduct__deleteicon {
+		.nav__cartproductdelete {
 			display: flex;
 			align-items: center;
 		}
@@ -143,12 +133,12 @@
 				display: none;
 			}
 
-			.cart__title {
+			.nav__carttitle {
 				&.hidden {
 					display: none;
 				}
 			}
-			.cart__line {
+			.nav__cartline {
 				width: 100%;
 				background-color: grey;
 				height: 0.5px;
@@ -157,7 +147,7 @@
 				left: 0;
 				top: 65px;
 			}
-			.cart__text {
+			.nav__cartempty {
 				width: 100%;
 				height: 100%;
 				font-weight: 700;
@@ -170,7 +160,7 @@
 				}
 			}
 
-			.cart__order {
+			.nav__cartorder {
 				display: grid;
 				grid-template-columns: 60px 1fr 20px;
 				gap: 10px;
@@ -180,7 +170,7 @@
 				&.hidden {
 					display: none;
 				}
-				.cartproduct__img {
+				.nav__cartproductimg {
 					> img {
 						height: 100%;
 						width: 100%;
@@ -188,28 +178,23 @@
 					}
 				}
 			}
-			.cartproduct__description {
+			.nav__cartproductdescription {
 				color: var(--darkgrayishblue);
 				> p {
 					padding: 5px;
 				}
-				.cartproduct__prices {
+				.nav__cartproductprices {
 					display: flex;
 					padding: 5px;
-					.cartproduct__boldorderprice {
+					.nav__cartproductprice {
 						font-weight: 700;
 						margin-left: 5px;
 					}
 				}
 			}
-
-			.cartproduct__deleteicon {
-				display: flex;
-				align-items: center;
-			}
 		}
 
-		.cartproduct__checkoutbtn {
+		.nav__cartproductcheckout {
 			width: 100%;
 			border: none;
 			background-color: var(--orange);
@@ -219,11 +204,5 @@
 			border-radius: 10px;
 			grid-column: 1 / -1;
 		}
-
-		.cartproduct__deleteicon {
-			display: flex;
-			align-items: center;
-		}
 	}
 }
-
