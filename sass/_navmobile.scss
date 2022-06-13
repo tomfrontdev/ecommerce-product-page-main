@@ -2,13 +2,10 @@
 	.nav {
 		display: flex;
 		align-items: center;
-
-		> * {
-			padding: 10px;
-		}
-
-		button {
-			cursor: pointer;
+		img {
+			border-radius: 0;
+			width: auto;
+			height: auto;
 		}
 
 		.nav__logo {

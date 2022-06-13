@@ -15,7 +15,7 @@
 					<img src="images/icon-menu.svg" alt="menu" />
 				</button>
 			</div>
-			<div class="nav__background hidden"></div>
+			<div class="nav__lightbox hidden"></div>
 			<div class="nav__dropdown">
 				<div class="nav__dropdownclose hidden">
 					<button class="nav__dropdownclosebtn">
@@ -80,29 +80,29 @@
 		</nav>
 		<main class="slider">
 			<section class="slider__images">
-				<div class="slider__mobileimages hidden">
-					<div class="slider__img">
+				<div class="slider__imagesmobile hidden">
+					<div class="slider__mobileimg">
 						<img
 							src="images/image-product-1.jpg"
 							alt="Product1"
 							data-info="slider__mobile"
 						/>
 					</div>
-					<div class="slider__img">
+					<div class="slider__mobileimg">
 						<img
 							src="images/image-product-2.jpg"
 							alt="Product2"
 							data-info="slider__mobile"
 						/>
 					</div>
-					<div class="slider__img">
+					<div class="slider__mobileimg">
 						<img
 							src="images/image-product-3.jpg"
 							alt="Product2"
 							data-info="slider__mobile"
 						/>
 					</div>
-					<div class="slider__img">
+					<div class="slider__mobileimg">
 						<img
 							src="images/image-product-4.jpg"
 							alt="Product2"
@@ -110,35 +110,73 @@
 						/>
 					</div>
 				</div>
-				<div class="slider__arrow slider__arrow--previous">
+				<div class="slider__arrow slider__arrow--previous hidden">
 					<button class="slider__arrowbtn">
 						<img src="images/icon-previous.svg" />
 					</button>
 				</div>
-				<div class="slider__arrow slider__arrow--next">
+				<div class="slider__arrow slider__arrow--next hidden">
 					<button class="slider__arrowbtn">
 						<img src="images/icon-next.svg" />
 					</button>
 				</div>
+				<div class="slider__desktopimages hidden">
+					<div class="slider__desktopmainimg">
+						<img
+							src="images/image-product-1.jpg"
+							alt="Product1"
+							data-info="slider__desktop"
+						/>
+					</div>
+					<div class="slider__desktopthumbnails">
+						<div class="slider__desktopthumbnail">
+							<img
+								src="images/image-product-1.jpg"
+								alt="Product1"
+								data-info="1"
+							/>
+						</div>
+						<div class="slider__desktopthumbnail">
+							<img
+								src="images/image-product-2.jpg"
+								alt="Product2"
+								data-info="2"
+							/>
+						</div>
+						<div class="slider__desktopthumbnail">
+							<img
+								src="images/image-product-3.jpg"
+								alt="Product3"
+								data-info="3"
+							/>
+						</div>
+						<div class="slider__desktopthumbnail">
+							<img
+								src="images/image-product-4.jpg"
+								alt="Product4"
+								data-info="4"
+							/>
+						</div>
+					</div>
 				<div class="slider__lightbox hidden">
 					<div class="slider__lightboxmainimg">
 						<img
 							src="images/image-product-1.jpg"
-							class="backgroundmainimg"
+							class="lightboxmainimg"
 							alt="Product1"
 						/>
 						<button
-							class="slider__backgroundbtn slider__backgroundbtn--previous"
+							class="slider__lightboxbtn slider__lightboxbtn--previous"
 						>
 							<img src="images/icon-previous.svg" />
 						</button>
 						<button
-							class="slider__backgroundbtn slider__backgroundbtn--next"
+							class="slider__lightboxbtn slider__lightboxbtn--next"
 						>
 							<img src="images/icon-next.svg" />
 						</button>
 						<button
-							class="slider__backgroundbtn slider__backgroundbtn--close"
+							class="slider__lightboxbtn slider__lightboxbtn--close"
 						>
 							<img src="images/icon-close.svg" />
 						</button>
@@ -214,6 +252,7 @@
 							<img
 							src="images/icon-cart.svg"
 						/>
+						</button>
 						<p>Add to cart</p>
 					</div>
 				</div>
