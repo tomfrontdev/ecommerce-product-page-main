@@ -1,8 +1,12 @@
-const activeSlide = document.querySelectorAll("[data-info=slider__mobile]");
-const thumbnailImg = document.querySelectorAll("[data-info]");
-const thumbnailSlider = document.querySelector(".slider__desktopthumbnail");
-const desktopImg = document.querySelector(".slider__desktopmainimg");
-const lightboxImg = document.querySelector(".lightboxmainimg");
+const activeSlide = document.querySelectorAll(".slider__mobileimg");
+const thumbnailDesktop = document.querySelectorAll(".slider__desktopthumbnail");
+const thumbnailDesktopimg = document.querySelectorAll("[data-desktop]");
+const thumbnailLightbox = document.querySelectorAll(
+	".slider__lightboxthumbnail"
+);
+const thumbnailLightboximg = document.querySelectorAll("[data-lightbox]");
+const desktopImg = document.querySelector(".slider__maindesktop");
+const lightboxImg = document.querySelector(".slider__lightboxmain");
 const sliderLightbox = document.querySelector(".slider__lightbox");
 const lightboxClose = document.querySelector(".slider__lightboxbtn--close");
 const nextBtn = document.querySelector(".slider__arrow--next");
@@ -37,7 +41,6 @@ const navmenuClose = document.querySelector(".nav__dropdownclosebtn");
 
 let currentSlide = 1;
 let priceIndex = 1;
-let flag = true;
 let imgId = 1;
 
 activeSlide.forEach(
@@ -63,22 +66,53 @@ prevSlider = () => {
 	moveSlider();
 };
 
-activeSlide.forEach((slide) => {
-	slide.addEventListener("click", (event) => {
-		imgId = event.target.dataset.info;
-		if (flag) {
-			desktopImg.src = `images/image-product-${imgId}.jpg`;
+switchimgLightbox = (imgId) => {
+	document
+		.querySelector(`[data-lightbox="${imgId}"]`)
+		.classList.add("active");
+	thumbnailLightboximg.forEach((img) => {
+		if (img.dataset.lightbox != imgId) {
+			img.classList.remove("active");
 		}
-		if (!flag) {
-			lightboxImg.src = `images/image-product-${imgId}.jpg`;
-		}
-		event.target.classList.add("clicked");
-		thumbnailImg.forEach((img) => {
-			if (img.dataset.info !== imgId) {
-				img.classList.remove("clicked");
-			}
-		});
 	});
+	lightboxImg.src = `images/image-product-${imgId}.jpg`;
+};
+
+thumbnailLightbox.forEach((slide) => {
+	slide.addEventListener("click", (event) => {
+		imgId = event.target.dataset.lightbox;
+		event.target.classList.add("active");
+		switchimgLightbox(imgId);
+	});
+});
+
+switchimgDesktop = (imgId) => {
+	thumbnailDesktopimg.forEach((img) => {
+		if (img.dataset.desktop != imgId) {
+			img.classList.remove("active");
+		}
+	});
+	desktopImg.src = `images/image-product-${imgId}.jpg`;
+};
+
+thumbnailDesktop.forEach((slide) => {
+	slide.addEventListener("click", (event) => {
+		imgId = event.target.dataset.desktop;
+		event.target.classList.add("active");
+		switchimgDesktop(imgId);
+	});
+});
+
+nextBtnLightbox.addEventListener("click", () => {
+	imgId++;
+	if (imgId > 4) imgId = 1;
+	switchimgLightbox(imgId);
+});
+
+prevBtnLightbox.addEventListener("click", () => {
+	imgId--;
+	if (imgId == 0) imgId = 4;
+	switchimgLightbox(imgId);
 });
 
 nextBtn.addEventListener("click", nextSlider);
@@ -166,16 +200,13 @@ navMenu.addEventListener("click", () => {
 
 desktopImg.addEventListener("click", () => {
 	sliderLightbox.classList.remove("hidden");
-	flag = false;
-	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
-	lightboxImg.src = `images/image-product-${imgId}.jpg`;
+	switchimgLightbox(imgId);
 });
 
 lightboxClose.addEventListener("click", () => {
 	sliderLightbox.classList.add("hidden");
-	flag = true;
-	thumbnailImg.forEach((img) => {
-		img.classList.remove("clicked");
+	thumbnailDesktop.forEach((img) => {
+		img.classList.remove("active");
 	});
 	console.log("Hi");
 	imgId = 1;
@@ -183,38 +214,7 @@ lightboxClose.addEventListener("click", () => {
 
 sliderLightbox.addEventListener("click", (e) => {
 	if (e.target == e.currentTarget) sliderLightbox.classList.add("hidden");
-	flag = true;
 });
-
-prevBtnLightbox.addEventListener("click", () => {
-	imgId--;
-	if (imgId == 0) imgId = 4;
-	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
-	thumbnailImg.forEach((img) => {
-		if (img.dataset.info != imgId) {
-			img.classList.remove("clicked");
-		}
-	});
-	lightboxImg.src = `images/image-product-${imgId}.jpg`;
-});
-
-nextBtnLightbox.addEventListener("click", () => {
-	imgId++;
-	if (imgId > 4) imgId = 1;
-	document.querySelector(`[data-info="${imgId}"]`).classList.add("clicked");
-	thumbnailImg.forEach((img) => {
-		if (img.dataset.info != imgId) {
-			img.classList.remove("clicked");
-		}
-	});
-	lightboxImg.src = `images/image-product-${imgId}.jpg`;
-});
-
-if (window.outerWidth < 500) {
-	activeSlide.forEach((s, i) => {
-		s.style.transform = `translateX(${100 * i}%)`;
-	});
-}
 
 document.body.addEventListener("click", (e) => {
 	if (!sliderCart.classList.contains("hidden")) {
