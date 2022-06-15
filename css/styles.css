@@ -49,6 +49,10 @@ img {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
 @media (max-width: 549px) {
   .slider__mobile {
     position: relative;
@@ -705,6 +709,7 @@ img {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
   .nav .nav__cart .nav__cartorder .nav__cartproductcheckout p {
     color: white;
