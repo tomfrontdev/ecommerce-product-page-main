@@ -32,9 +32,7 @@ const sliderCart = document.querySelector(".nav__cart");
 const sliderCarttext = document.querySelector(".nav__cartempty");
 const sliderCartorder = document.querySelector(".nav__cartorder");
 const sliderCartorderprice = document.querySelector(".nav__cartproductprice");
-const sliderCartorderpricebold = document.querySelector(
-	".nav__cartproductboldprice"
-);
+const sliderCartorderpricebold = document.querySelector(".nav__cartproductsum");
 const translucentBackground = document.querySelector(".nav__lightbox");
 const cartOrderdelete = document.querySelector(".nav__cartproductdeletebtn");
 const navmenuClose = document.querySelector(".nav__dropdownclosebtn");

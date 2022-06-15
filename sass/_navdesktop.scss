@@ -1,13 +1,18 @@
 @media (min-width: 550px) {
 	.nav {
+		img {
+			height: auto;
+			width: auto;
+			border-radius: 0;
+		}
+		padding: 20px;
 		display: flex;
 		align-items: center;
 		margin-bottom: 150px;
-		margin-left: 20px;
-		margin-right: 20px;
 		position: relative;
 		&__basket {
 			position: relative;
+			align-items: center;
 			order: 4;
 			.nav__basketpopup {
 				position: absolute;
@@ -65,7 +70,7 @@
 					position: absolute;
 					background-color: orange;
 					height: 3px;
-					top: 53px;
+					top: 48px;
 					left: 0;
 				}
 			}
@@ -78,11 +83,10 @@
 			}
 		}
 		.nav__cart {
-			padding: 20px;
 			z-index: 1;
 			width: 350px;
 			height: 250px;
-			top: 60px;
+			top: 70px;
 			right: 0;
 			-webkit-box-shadow: 0px 6px 20px -3px rgba(162, 162, 175, 1);
 			-moz-box-shadow: 0px 6px 20px -3px rgba(162, 162, 175, 1);
@@ -97,7 +101,7 @@
 			}
 
 			.nav__carttitle {
-				padding-bottom: 40px;
+				padding: 20px;
 				&.hidden {
 					display: none;
 				}
@@ -106,10 +110,7 @@
 				width: 100%;
 				background-color: grey;
 				height: 0.5px;
-				opacity: 0.5;
-				position: absolute;
-				left: 0;
-				top: 65px;
+				opacity: 0.3;
 			}
 			.nav__cartempty {
 				width: 100%;
@@ -126,7 +127,8 @@
 			.nav__cartorder {
 				display: grid;
 				grid-template-columns: 60px 1fr 20px;
-				gap: 10px;
+				gap: 20px;
+				padding: 20px;
 				position: relative;
 				&.hidden {
 					display: none;
@@ -135,7 +137,7 @@
 					> img {
 						height: 100%;
 						width: 100%;
-						border-radius: 10%;
+						border-radius: 10px;
 					}
 				}
 				.nav__cartproductcheckout {
@@ -146,17 +148,26 @@
 					padding: 20px;
 					border-radius: 10px;
 					grid-column: 1 / -1;
+					display: flex;
+					justify-content: center;
+					p {
+						color: white;
+					}
 				}
 			}
 			.nav__cartproductdescription {
 				color: var(--darkgrayishblue);
-				> p {
-					padding: 5px;
+				height: 60px;
+				font-size: 0.9rem;
+				display: flex;
+				flex-direction: column;
+				.nav__cartproducttitle {
+					margin: auto 0;
 				}
 				.nav__cartproductprices {
 					display: flex;
-					padding: 5px;
-					.nav__cartproductboldprice {
+					margin: auto 0;
+					.nav__cartproductsum {
 						font-weight: 700;
 						margin-left: 5px;
 					}
@@ -170,13 +181,13 @@
 		.nav__avatar {
 			border: none;
 			background-color: inherit;
-			width: 50px;
-			height: 50px;
 			order: 5;
 			margin-left: 15px;
+			width: 40px;
+			height: 40px;
 			img {
-				height: 50px;
-				width: 50px;
+				width: 40px;
+				height: 40px;
 			}
 		}
 		.nav__avatar:hover {
@@ -191,6 +202,6 @@
 		height: 0.5px;
 		opacity: 0.2;
 		position: absolute;
-		top: 70px;
+		top: 80px;
 	}
 }

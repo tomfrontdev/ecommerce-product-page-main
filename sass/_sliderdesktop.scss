@@ -1,11 +1,11 @@
 @media (min-width: 550px) {
 	.slider {
-		display: flex;
 		margin-left: 20px;
 		margin-right: 20px;
-		gap: 5%;
+		display: flex;
+		gap: 10%;
 		&__images {
-			width: 50%;
+			width: 40%;
 			.slider__mobile {
 				&.hidden {
 					display: none;
@@ -13,18 +13,23 @@
 			}
 		}
 		&__textsection {
-			padding: 20px;
 			display: flex;
 			flex-direction: column;
-			margin-top: 50px;
-			width: 50%;
+			margin: auto;
 			padding: 0;
 			> p {
 				color: var(--darkgrayishblue);
 				line-height: 1.3rem;
 			}
+			> * {
+				margin-bottom: 20px;
+			}
+			&description {
+				> * {
+					margin-bottom: 10px;
+				}
+			}
 			&prices {
-				padding-top: 10px;
 				.slider__textsectionflexbox {
 					display: flex;
 				}
@@ -52,34 +57,29 @@
 				}
 			}
 
-			&btn {
-				border-radius: 5px;
-				margin-top: 20px;
-				background-color: var(--lightgrayishblue);
-				padding: 15px;
-				display: flex;
-				justify-content: space-between;
-				height: 50px;
-				align-items: center;
-				border: none;
-				&--add {
-					color: white;
-					border: none;
-					width: 100%;
-					padding: 15px;
-					margin-top: 10px;
-					background-color: var(--orange);
+			&buttons {
+				.slider__textsectionbtn {
 					border-radius: 5px;
+					background-color: var(--lightgrayishblue);
+					padding: 15px;
 					display: flex;
-					font-weight: 400;
-					justify-content: center;
-					align-items: center;
-					font-size: 1rem;
+					justify-content: space-between;
+					border-radius: 5px;
 					height: 50px;
-					cursor: pointer;
-				}
-				&--add:hover {
-					opacity: 0.5;
+					align-items: center;
+					border: none;
+					width: 40%;
+					&--add {
+						color: white;
+						background-color: var(--orange);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 60%;
+					}
+					&--add:hover {
+						opacity: 0.5;
+					}
 				}
 			}
 		}
@@ -203,13 +203,13 @@
 
 	.slider__textsectionbtn {
 		width: 100%;
-		margin-right: 10px;
 	}
 
 	.slider__textsectionbuttons {
 		display: flex;
 		align-items: center;
-		width: 100%;
+		gap: 10px;
+		margin-top: 20px;
 	}
 
 	.slider__textsection {

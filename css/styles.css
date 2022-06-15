@@ -36,19 +36,13 @@ img {
 }
 
 h1 {
-  width: 100%;
-  font-size: 2rem;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
 }
 
 h2 {
   color: var(--orange);
   letter-spacing: 1px;
   font-size: 1rem;
-}
-
-h3 {
-  margin: 20px;
 }
 
 img {
@@ -64,8 +58,7 @@ img {
   }
   .slider__mobileimg {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    border-radius: 0;
   }
   .slider__arrow {
     position: absolute;
@@ -99,11 +92,17 @@ img {
     color: var(--darkgrayishblue);
     line-height: 1.3rem;
   }
-  .slider__textsection > * {
-    margin-bottom: 20px;
+  .slider__textsectiondescription > * {
+    margin-bottom: 10px;
   }
   .slider__textsectionprices {
     position: relative;
+  }
+  .slider__textsectionprices > * {
+    margin-bottom: 10px;
+  }
+  .slider__textsectionprices .slider__textsectionflexbox {
+    display: flex;
   }
   .slider__textsectionprices .slider__textsectionprice {
     font-size: 1.5rem;
@@ -113,13 +112,16 @@ img {
     display: inline-block;
   }
   .slider__textsectionprices .slider__textsectiondiscount {
+    display: flex;
+    align-items: center;
     color: var(--orange);
-    border-radius: 10%;
-    background-color: var(--paleorange);
-    padding: 2px;
     font-size: 1rem;
     font-weight: 700;
-    display: inline-block;
+  }
+  .slider__textsectionprices .slider__textsectiondiscount p {
+    border-radius: 10%;
+    padding: 3px;
+    background-color: var(--paleorange);
   }
   .slider__textsectionprices .slider__textsectionoriginalprice {
     color: var(--grayishblue);
@@ -127,6 +129,9 @@ img {
     position: absolute;
     right: 0;
     top: 5px;
+  }
+  .slider__textsectionbuttons > * {
+    margin-bottom: 10px;
   }
   .slider__textsectionbtn {
     border-radius: 5px;
@@ -139,7 +144,6 @@ img {
     border: none;
   }
   .slider__textsectionbtn--add {
-    margin-top: 20px;
     color: white;
     border: none;
     width: 100%;
@@ -165,31 +169,32 @@ img {
 
 @media (min-width: 550px) {
   .slider {
-    display: flex;
     margin-left: 20px;
     margin-right: 20px;
-    gap: 5%;
+    display: flex;
+    gap: 10%;
   }
   .slider__images {
-    width: 50%;
+    width: 40%;
   }
   .slider__images .slider__mobile.hidden {
     display: none;
   }
   .slider__textsection {
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-    width: 50%;
+    margin: auto;
     padding: 0;
   }
   .slider__textsection > p {
     color: var(--darkgrayishblue);
     line-height: 1.3rem;
   }
-  .slider__textsectionprices {
-    padding-top: 10px;
+  .slider__textsection > * {
+    margin-bottom: 20px;
+  }
+  .slider__textsectiondescription > * {
+    margin-bottom: 10px;
   }
   .slider__textsectionprices .slider__textsectionflexbox {
     display: flex;
@@ -216,34 +221,27 @@ img {
     text-decoration: line-through;
     display: block;
   }
-  .slider__textsectionbtn {
+  .slider__textsectionbuttons .slider__textsectionbtn {
     border-radius: 5px;
-    margin-top: 20px;
     background-color: var(--lightgrayishblue);
     padding: 15px;
     display: flex;
     justify-content: space-between;
+    border-radius: 5px;
     height: 50px;
     align-items: center;
     border: none;
+    width: 40%;
   }
-  .slider__textsectionbtn--add {
+  .slider__textsectionbuttons .slider__textsectionbtn--add {
     color: white;
-    border: none;
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
     background-color: var(--orange);
-    border-radius: 5px;
     display: flex;
-    font-weight: 400;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
-    height: 50px;
-    cursor: pointer;
+    width: 60%;
   }
-  .slider__textsectionbtn--add:hover {
+  .slider__textsectionbuttons .slider__textsectionbtn--add:hover {
     opacity: 0.5;
   }
   .slider__desktopimages {
@@ -348,12 +346,12 @@ img {
   }
   .slider__textsectionbtn {
     width: 100%;
-    margin-right: 10px;
   }
   .slider__textsectionbuttons {
     display: flex;
     align-items: center;
-    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
   }
   .slider__textsection {
     width: 50%;
@@ -369,6 +367,8 @@ img {
   .nav {
     display: flex;
     align-items: center;
+    padding: 20px;
+    gap: 10px;
   }
   .nav img {
     border-radius: 0;
@@ -384,6 +384,7 @@ img {
   }
   .nav .nav__dropdown {
     height: 1000px;
+    margin: 0;
     min-width: 200px;
     background-color: var(--white);
     animation-duration: 0.5s;
@@ -457,8 +458,8 @@ img {
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    right: 6px;
-    top: 20%;
+    right: -2px;
+    top: -2px;
   }
   .nav .nav__basket .nav__basketpopup.nav__basketpopup--orange.hidden {
     display: none;
@@ -472,12 +473,11 @@ img {
     align-items: center;
   }
   .nav .nav__cart {
-    padding: 20px;
     z-index: 1;
     width: calc(100% - 40px);
     margin: 20px;
-    height: 250px;
-    top: 40px;
+    top: 60px;
+    height: 243.5px;
     left: 0;
     background-color: var(--white);
     border-radius: 10px;
@@ -488,6 +488,9 @@ img {
   .nav .nav__cart.hidden {
     display: none;
   }
+  .nav .nav__cart .nav__carttitle {
+    padding: 20px;
+  }
   .nav .nav__cart .nav__carttitle.hidden {
     display: none;
   }
@@ -496,9 +499,6 @@ img {
     background-color: grey;
     height: 0.5px;
     opacity: 0.5;
-    position: absolute;
-    left: 0;
-    top: 65px;
   }
   .nav .nav__cart .nav__cartempty {
     width: 100%;
@@ -514,30 +514,36 @@ img {
   }
   .nav .nav__cart .nav__cartorder {
     display: grid;
+    padding: 20px;
     grid-template-columns: 60px 1fr 20px;
-    gap: 10px;
-    padding-bottom: 40px;
-    padding-top: 40px;
+    gap: 20px;
   }
   .nav .nav__cart .nav__cartorder.hidden {
     display: none;
   }
-  .nav .nav__cart .nav__cartorder .nav__cartproductimg > img {
-    height: 100%;
+  .nav .nav__cart .nav__cartorder .nav__cartproductimg {
+    width: 60px;
+    height: 60px;
+  }
+  .nav .nav__cart .nav__cartorder .nav__cartproductimg img {
     width: 100%;
     border-radius: 10%;
   }
   .nav .nav__cart .nav__cartproductdescription {
     color: var(--darkgrayishblue);
+    height: 60px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
   }
-  .nav .nav__cart .nav__cartproductdescription > p {
-    padding: 5px;
+  .nav .nav__cart .nav__cartproductdescription .nav__cartproducttitle {
+    margin: auto 0;
   }
   .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices {
     display: flex;
-    padding: 5px;
+    margin: auto 0;
   }
-  .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices .nav__cartproductprice {
+  .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices .nav__cartproductsum {
     font-weight: 700;
     margin-left: 5px;
   }
@@ -547,23 +553,32 @@ img {
     background-color: var(--orange);
     color: var(--white);
     padding: 20px;
-    margin-top: 20px;
     border-radius: 10px;
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+  }
+  .nav .nav__cartproductcheckout p {
+    color: white;
   }
 }
 
 @media (min-width: 550px) {
   .nav {
+    padding: 20px;
     display: flex;
     align-items: center;
     margin-bottom: 150px;
-    margin-left: 20px;
-    margin-right: 20px;
     position: relative;
+  }
+  .nav img {
+    height: auto;
+    width: auto;
+    border-radius: 0;
   }
   .nav__basket {
     position: relative;
+    align-items: center;
     order: 4;
   }
   .nav__basket .nav__basketpopup {
@@ -619,18 +634,17 @@ img {
     position: absolute;
     background-color: orange;
     height: 3px;
-    top: 53px;
+    top: 48px;
     left: 0;
   }
   .nav .nav__hamburger .nav__hamburgerbtn.hidden {
     display: none;
   }
   .nav .nav__cart {
-    padding: 20px;
     z-index: 1;
     width: 350px;
     height: 250px;
-    top: 60px;
+    top: 70px;
     right: 0;
     box-shadow: 0px 6px 20px -3px #a2a2af;
     background-color: var(--white);
@@ -643,7 +657,7 @@ img {
     display: none;
   }
   .nav .nav__cart .nav__carttitle {
-    padding-bottom: 40px;
+    padding: 20px;
   }
   .nav .nav__cart .nav__carttitle.hidden {
     display: none;
@@ -652,10 +666,7 @@ img {
     width: 100%;
     background-color: grey;
     height: 0.5px;
-    opacity: 0.5;
-    position: absolute;
-    left: 0;
-    top: 65px;
+    opacity: 0.3;
   }
   .nav .nav__cart .nav__cartempty {
     width: 100%;
@@ -672,7 +683,8 @@ img {
   .nav .nav__cart .nav__cartorder {
     display: grid;
     grid-template-columns: 60px 1fr 20px;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px;
     position: relative;
   }
   .nav .nav__cart .nav__cartorder.hidden {
@@ -681,7 +693,7 @@ img {
   .nav .nav__cart .nav__cartorder .nav__cartproductimg > img {
     height: 100%;
     width: 100%;
-    border-radius: 10%;
+    border-radius: 10px;
   }
   .nav .nav__cart .nav__cartorder .nav__cartproductcheckout {
     width: 100%;
@@ -691,18 +703,27 @@ img {
     padding: 20px;
     border-radius: 10px;
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+  }
+  .nav .nav__cart .nav__cartorder .nav__cartproductcheckout p {
+    color: white;
   }
   .nav .nav__cart .nav__cartproductdescription {
     color: var(--darkgrayishblue);
+    height: 60px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
   }
-  .nav .nav__cart .nav__cartproductdescription > p {
-    padding: 5px;
+  .nav .nav__cart .nav__cartproductdescription .nav__cartproducttitle {
+    margin: auto 0;
   }
   .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices {
     display: flex;
-    padding: 5px;
+    margin: auto 0;
   }
-  .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices .nav__cartproductboldprice {
+  .nav .nav__cart .nav__cartproductdescription .nav__cartproductprices .nav__cartproductsum {
     font-weight: 700;
     margin-left: 5px;
   }
@@ -713,14 +734,14 @@ img {
   .nav .nav__avatar {
     border: none;
     background-color: inherit;
-    width: 50px;
-    height: 50px;
     order: 5;
     margin-left: 15px;
+    width: 40px;
+    height: 40px;
   }
   .nav .nav__avatar img {
-    height: 50px;
-    width: 50px;
+    width: 40px;
+    height: 40px;
   }
   .nav .nav__avatar:hover {
     outline: 2px solid orange;
@@ -733,7 +754,7 @@ img {
     height: 0.5px;
     opacity: 0.2;
     position: absolute;
-    top: 70px;
+    top: 80px;
   }
 }
 
