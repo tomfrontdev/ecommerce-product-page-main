@@ -133,7 +133,7 @@ button {
     text-decoration: line-through;
     position: absolute;
     right: 0;
-    top: 5px;
+    top: -15px;
   }
   .slider__textsectionbuttons > * {
     margin-bottom: 10px;
@@ -373,6 +373,7 @@ button {
     display: flex;
     align-items: center;
     padding: 20px;
+    gap: 10px;
   }
   .nav img {
     border-radius: 0;
@@ -381,12 +382,6 @@ button {
   }
   .nav .nav__logo {
     flex-grow: 4;
-  }
-  .nav .nav__hamburger {
-    margin-right: 10px;
-  }
-  .nav .nav__avatar {
-    margin-left: 10px;
   }
   .nav .nav__avatar img {
     height: 25px;
@@ -405,7 +400,7 @@ button {
     top: 0;
     flex-direction: column;
     font-weight: 700;
-    padding: 0;
+    padding: 20px;
   }
   .nav .nav__dropdown.showanimation {
     animation-name: showDropdawn;
@@ -417,17 +412,16 @@ button {
   .nav .nav__dropdown > * {
     cursor: pointer;
   }
-  .nav .nav__dropdown .nav__dropdownclose {
-    padding: 15px;
-  }
   .nav .nav__dropdown .nav__dropdownmenu {
     list-style-type: none;
     display: inline-block;
     margin-right: auto;
-    padding: 15px 15px 0 15px;
   }
   .nav .nav__dropdown .nav__dropdownmenu > li {
-    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  .nav .nav__dropdown .nav__dropdownclose {
+    margin-bottom: 20px;
   }
   .nav .nav__background {
     animation-duration: 0.5s;
@@ -481,6 +475,7 @@ button {
   .nav .nav__cartproductdelete {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .nav .nav__cart {
     z-index: 1;
@@ -628,7 +623,7 @@ button {
   }
   .nav .nav__dropdown .nav__dropdownmenu li {
     list-style-type: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     width: 80px;
     text-align: center;
     color: var(--darkgrayishblue);
@@ -646,6 +641,7 @@ button {
     height: 3px;
     top: 48px;
     left: 0;
+    animation: underScore 0.5s ease-out;
   }
   .nav .nav__hamburger .nav__hamburgerbtn.hidden {
     display: none;
@@ -784,6 +780,18 @@ button {
   }
   to {
     left: -200px;
+  }
+}
+
+@keyframes underScore {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 

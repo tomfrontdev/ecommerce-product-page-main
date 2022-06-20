@@ -3,6 +3,7 @@
 		display: flex;
 		align-items: center;
 		padding: 20px;
+		gap: 10px;
 		img {
 			border-radius: 0;
 			width: auto;
@@ -12,12 +13,7 @@
 			flex-grow: 4;
 		}
 
-		.nav__hamburger {
-			margin-right: 10px;
-		}
-
 		.nav__avatar {
-			margin-left: 10px;
 			img {
 				height: 25px;
 				width: 25px;
@@ -37,7 +33,7 @@
 			top: 0;
 			flex-direction: column;
 			font-weight: 700;
-			padding: 0;
+			padding: 20px;
 			&.showanimation {
 				animation-name: showDropdawn;
 				animation-fill-mode: forwards;
@@ -48,17 +44,16 @@
 			> * {
 				cursor: pointer;
 			}
-			.nav__dropdownclose {
-				padding: 15px;
-			}
 			.nav__dropdownmenu {
 				list-style-type: none;
 				display: inline-block;
 				margin-right: auto;
-				padding: 15px 15px 0 15px;
 				> li {
-					padding-bottom: 15px;
+					margin-bottom: 20px;
 				}
+			}
+			.nav__dropdownclose {
+				margin-bottom: 20px;
 			}
 		}
 
@@ -117,6 +112,7 @@
 		.nav__cartproductdelete {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 		}
 
 		.nav__cart {
