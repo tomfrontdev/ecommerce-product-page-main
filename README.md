@@ -11,3 +11,7 @@ https://tomfrontdev.github.io/ecommerce-product-page-main/
 - Add items to the cart
 - View the cart and remove items from it
 
+## Tech stack used:
+
+Javascript, SCSS, HTML
+
